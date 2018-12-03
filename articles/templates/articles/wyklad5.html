@@ -1,0 +1,349 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Dźwigary pełnościenne</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-1-1">Ustroje jednoprzęsłowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-2">Ustroje ciągłe wieloprzęsłowe</a>
+                    </nav>
+                    <a class="nav-link" href="#article-2">Dźwigary ramowe</a>
+                    <a class="nav-link" href="#article-3">Kształtowanie przekroju poprzecznego</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-3-1">Mosty dwudźwigarowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-3-2">Mosty wielodźwigarowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-3-3">Mosty z dźwigarami dwuściennymi</a>
+                        <a class="nav-link ml-3 my-1" href="#article-3-4">Mosty skrzynkowe</a>
+                    </nav>
+                    <a class="nav-link" href="#article-4">Obliczenia statyczne przęseł belkowych</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-4-1">Obliczenia statyczne układu dwudźwigarowego</a>
+                        <a class="nav-link ml-3 my-1" href="#article-4-2">Obliczenia statyczne układu wielodźwigarowego</a>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Dźwigary główne pełnościenne</span>
+                            <p>
+                                - stosowane do pokonywania małych, średnich i większych rozpiętości, mogą występować jako:
+                                <ol type="a">
+                                    <li>swobodnie podparte jednoprzęsłowe</li>
+                                    <div class='opis'>
+                                        <div class='row'>
+                                            <div class='col-md-8' id='article-1-1'>
+                                                <p><b>Ustroje jednoprzęsłowe</b></p>
+                                                Mniej ekonomiczne od ustrojów ciągłych - większa wysokośc w proporcji do rozpiętości, większy cieżar, większe zużycie stali.
+                                                Mimo to chętnie stosowane, ze względu na łatwość montażu i czytelność pracy. Obecnie stosuje się rozwiązania dźwigarów o pasach równoległych,
+                                                W przeciętnie skonstruowanym przęśle mostu dwudźwigarowego stosunek wysokości dźwigara do jego rozpiętości waha się między 1/9 i 1/12 w mostach kolejowych,
+                                                a między 1/10 i 1/16 w mostach drogowych.
+                                                W mostach starszych kolejowych stosowano o zmiennej wysokości (w środku rozpiętości wysokość belki większa niż na skrajach belki),
+                                                aby zmniejszyć wrażliwość na drgania oraz bardziej dopasować do obwiedni momentów zginających.
+                                            </div>
+                                            <div class='col=md-4'>
+                                                <figure>
+                                                    <img class="center-jpg" style="height:150px;" src="../static/img/w5_1.jpg" alt="">
+                                                    <figcaption>Konstrukcje dźwigara o zmiennej wysokości</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <li>zespół przęseł swobodnie podpartych w moście wieloprzęsłowym</li>
+                                    <li>wieloprzęsłowe — ciągle o stałej wysokości</li>
+                                    <div class='opis' id='article-1-2'>
+                                        <div class='row'>
+                                            <div class='col-md-8'>
+                                                <p><b>Ustroje ciągłe wieloprzęsłowe</b></p>
+                                                Rozpiętości przęseł osiągane w mostach o dźwigarach ciągłych mających stały przekrój dochodzą do 80 m.
+                                                Stosunki wysokości przekroju do rozpiętości przęsła wahają się w granicach 1/12 - l/16.
+                                                Najczęście stosowane trójprzęsłowe z dłuższym przęsłem środkowym ~20%, aby wyrównać ekstremalny moment przęsłowy.
+                                                Dźwigary ciągłe są wrażliwe na nierównomierne osiadanie podpór oraz oddziałowywanie temperatury.
+                                                Zmianę wysokości uzyskuje się stosując proste skosy o nachyleniu 1:6 -1:10, albo prowadząc pas dolny wg krzywej parabolicznej.
+                                                <br><br>
+                                                <p>
+                                                    Zwiększenie wysokości dźwigara nad podporą nie jest obojętne dla występujących w nim momentów.
+                                                    Przekroje podporowe — jako bardziej sztywne przyjmują na siebie większe momenty, maleją natomiast momenty przęsłowe.
+                                                    Zmiany w przebiegu linii wpływu momentów przęsłowych i podporowych występujące przy zwiększeniu przekrojów nad podporami pokazuje.
+                                                    Zwiększenie przekroju nad podporami wpływa bardzo korzystnie na wielkość ugięć przęseł.
+                                                    Ugięcia wyraźnie maleją.
+                                                </p>
+                                            </div>
+                                            <div class='col-md-4'>
+                                                <figure>
+                                                    <img src="../static/img/w5_2.jpg" alt="">
+                                                    <figcaption>Linie wpływu momentów w dźwigarze o stałym przekroju (lnia ciągła) i o zmiennym przekroju (iinia przerywana)</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <li>wieloprzęsłowe — ciągle o zmiennej wysokości</li>
+                                    <li>wieloprzęsłowe - przegubowe</li>
+                                    <div class='opis'>
+                                        Nazywane gerberowskimi posiadają zalety dźwigarów ciągłych, są niewrażliwe na osiadanie podpór.
+                                        Obecnie niestosowane z powodów:
+                                        <ul>
+                                            <li>występowania znacznych ugięć w miejscu przegubu, gdzie zwiększone jest oddziaływanie dynamiczne</li>
+                                            <li>wykonawczych, trudności ze skonstruowaniem wiatrownic w miejscu przegubu oraz utrzymanie przegubów w stanie gwarantującym poprawną pracę statyczną</li>
+                                        </ul>
+                                        <p>
+                                            Usytuowanie przegubów zależne jest od rozmieszczenia podpór, rozstawu poprzecznic i sposobu podparcia.
+                                            Prawidłowe usytuowanie to takie, przy którym uzyskuje się:
+                                            <ul>
+                                                <li>
+                                                    wyrównanie momentów przęsłowych i podporowych,
+                                                </li>
+                                                <li>
+                                                    możliwie małe naciski w przegubie,
+                                                </li>
+                                                <li>
+                                                    wyłącznie dodatnie reakcje na podporach.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </ol>
+                                <figure>
+                                    <img src="../static/img/w2_1.jpg" alt="">
+                                    <figcaption>Schematy statyczne mostów belkowych pełnościnnych.</figcaption>
+                                </figure>
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <div id="article-2" class="main-article">
+                            <div class='row m-0'>
+                                <div class='col-md-6  p-0'>
+                                    <span>
+                                        Dźwigary główne ramowe
+                                    </span>
+                                    <p>
+                                        Dźwigary ramowe mają te same cechy — w tym również wady i zalety, co dźwigary ciągłe wieloprzęsłowe o zmiennym przekroju.
+                                        Cechują je trudności montażowe i znaczny koszt wykonawstwa.
+                                        Równocześnie jednak istnieje możliwość uzyskiwania małych wysokości ustrojowych i małych ugięć.
+                                        Ustroje ramowe generują rozpór, należą do ustrojów rozporowych.
+                                    </p>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w5_3.jpg" alt="">
+                                        <figcaption>Schematy mostów ramowych</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <p>
+                                Sztywność słupów dodatkowo zmniejsza obroty przekrojów podporowych i daje możliwość uzyskiwania jeszcze lepszych efektów niż w belkach ciągłych odnośnie małych wysokości rygla i małych ugięć.
+                            </p>
+                            <p>
+                                Dźwigary ramowe stosowane są w wiaduktach (nie w mostach ponieważjs talowe podpory i łożyska nie mogą być zalewane wodą) w miejscach o ograniczonej możliwości ustawiania podpór betonowych.
+                                Może to być nad ulicami przy braku miejsca lub tam gdzie w celu, zachowania widoczności wskazane jest budowanie podpór możliwie jak najbardziej smukłych
+                            </p>
+                            <div class='row m-0'>
+                                <div class='col-md-6'>
+                                    <br> <br>
+                                    <p class="center-jpg" >
+                                        Rolę podobną jak dźwigary ramowe spełniać mogą dźwigary ciągłe oparte na stalowych <b>słupach wahaczowych</b>, uzyskiwane smukłości słupów są tutaj jeszcze większe.
+                                    </p>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w5_4.jpg" alt="">
+                                        <figcaption>Belka ciągła na slupach wahaczowych</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div id="article-3" class="main-article">
+                            <span>Kształtowanie przekroju poprzecznego przęsła</span>
+                            <div class='row mx-0 my-1'>
+                                <div class='col-12'><br><br></div>
+                                <div class='col-md-8' id='article-3-1'>
+                                    <p>
+                                        Najprostsze konstrukcje mostowe budowane są jako <b>dwudźwigarowe</b>.
+                                        W przypadku mostów kolejowych będą to dwa dźwigary blachownicowe lub nawet walcowane,
+                                        wzajemnie stężone układem krzyżujących się prętów, z jazdą na mostownicach.
+                                    </p>
+                                    <p>
+                                        W mostach drogowych konstrukcja dwudźwigarowa, w najprostszym swoim wydaniu, możliwa jest do zastosowania jedynie przy stosunkowo małej szerokości mostu.
+                                        Przy wymaganej większej szerokości mostu, płyta pomostowa musi być oparta na układzie podłużnic i poprzecznic.
+                                        Wadą tego rozwiązania jest stosunkowo ciężka konstrukcja pomostu,
+                                        znaczna wysokość dźwigarów głównych i tym samym znaczna wysokość ustrojowa mostu.
+                                        W wyniku wzrostu wysokości ustrojowej mostu wymagane są większe masypy, co skutkuje zajmowaniem wiekszęgo terenu - dlatego w Polsce rzadziej stosowane.
+                                        Rozstaw dźwigarów głównych wynosi ok. 5~8 m i jedynie przy dużych rozpiętościach przęseł może ulec zwiększeniu.
+                                    </p>
+                                    </p>
+                                </div>
+                                <div class='col-md-4'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w5_5.JPG" alt="">
+                                        <figcaption>Przekrój poprzeczny mostu dwudżwigarowego</figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-12'><br><br></div>
+                                <div class='col-md-8' id='article-3-2'>
+                                    <p>
+                                        Zmniejszenie wysokości i ciężaru pomostu uzyskać można stosując rozwiązanie <b>wielodźwigarowe</b>.
+                                        Chętnie stosowane przy ograniczeniach nałożonych na wysokość konstrukcyjną (w przęsłach jazdą górą) oraz w mostach szerokich.
+                                        Rozstaw belek głównych w układach wielodźwigarowych
+                                        <ul>
+                                            <li>
+                                                mosty kolejowe ~ 1,0-2,0 m.
+                                            </li>
+                                            <li>
+                                                mosty drogowe ~ 1,5-3,0 m. (lub więcej przy zastosowaniu podłużnic)
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <div class='col-md-4'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w5_5_1.JPG" alt="">
+                                        <figcaption>Przekrój poprzeczny mostu wielodżwigarowego</figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-12'><br><br></div>
+                                <div class='col-md-8' id='article-3-3' >
+                                    Pewne zmniejszenie wysokości ustrojowej w rozwiązaniu dwudźwigarowym można uzyskać stosując <b>dźwigary dwuścienne</b>.
+                                    Rozwiązanie to można stosować przy jezdni górnej, ale szczególne uzasadnienie znajduje ono przy jezdni dolnej.
+                                    Dźwigary dwuścienne mają wspólny pas górny i dwa oddzielne pasy dolne — dla zapewnienia dostępu do wnętrza dźwigara.
+                                    Jest to nieodzowne tak ze względów montażowych, jak i ze względu na konserwację.
+                                    Jako minimalny odstęp w świetle blach pasa dolnego przyjmuje się 30 cm.
+                                </div>
+                                <div class='col-md-4'>
+                                    <figure>
+                                        <img src="../static/img/w5_6.JPG" alt="">
+                                        <figcaption>Mosty z dźwigarami dwuściennymi: a) z jezdnią górną, b) z jezdnią dolną</figcaption>
+                                    </figure>
+                                </div>
+                                <div>
+                                    Przez wzajemne połączenie pasów dolnych dwóch sąsiednich belek przęsłą otrzymuje się jedną belkę dwuścienną o zamkniętym przekroju,
+                                    wykazującą duźą sztywność skręcajnie, belka taka ma wewnątrz przepony z otworami przełazowymi oraz ewentualnie z otworami do urządzeń komunalnych.
+                                    W przęsłach wielodźwigarowych belki skrzynkowe wykształca się również łącząc wspólnym pasem dolnym dwie sąsiednie belki.
+                                    Rozwiązanie technicznie jednoznaczne, dające jednak możliwość lepszego wyetapowania budowy można uzyskać wprowadzając podłużną szczelinę dylatacyjną.
+                                </div>
+                                <div class='col-12'><br><br></div>
+                                <div class='col-md-6' id='article-3-4'>
+                                    <p>
+                                        <br><br>
+                                        <b>Dźwigary skrzynkowe</b> mające sztywny przekrój zamknięty bądź otwarty.
+                                        Charakteryzując się dużą sztywnością na skręcanie
+                                        Osiągają aktualnie znaczne rozpiętości przy małej wysokości,
+                                        wynoszącej około ~<sup>1</sup>/<sub>30</sub>-<sup>1</sup>/<sub>35</sub> rozpiętości L oraz około ~<sup>1</sup>/<sub>60</sub>-<sup>1</sup>/<sub>80</sub> w systemach złożonych i wantowych i dochodzącej
+                                        do <sup>1</sup>/<sub>300</sub> w mostach wiszących o dużych rozpiętościach, dla których przekrój skrzynkowy jest szczególnie korzystny pod względem aerodynamicznym.
+                                    </p>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img src="../static/img/w5_7.JPG" alt="">
+                                        <figcaption>Przekroje mostów skrzynkowych</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class='main-article' id='article-4'>
+                            <span>Obliczenia statyczne przęseł belkowych</span>
+                            <p>Możlwa jest dwuetapowa analiza z wykorzystaniem superpozycji skutków</p> <br>
+                            <ol style="list-style-type:none">
+                                <li>
+                                    ETAP I
+                                    <p>zginanie prętowe, w układzie płaskim</p><br>
+                                </li>
+                                <li>
+                                    ETAP II
+                                    <p>skręcanie przekrojów skrzynkowych pod obciążeniem asymetrycznym</p><br>
+                                </li>
+                            </ol>
+                            <br>
+                            <p>Przyjęcie modelu obliczeniowego uzależnione jest od ukształtowania przekroju poprzecznego i systemu statycznego dźwigarów głównych.</p>
+                            <br>
+                            <div id='article-4-1'>
+                                <span class="under">Obliczenia statyczne układu dwudźwigarowego</span>
+                                <p>
+                                    W większości przypadków mostów dwudźwigarowych, gdy ustrój posiada małą sztywność skrętną
+                                    (niewspółpracujący pomost o wiotkich poprzecznicach, słabe stężenie poprzeczne, mała sztywność skrętna dźwigarów głównych),
+                                    obliczenia można przeprowadzić drogą rozdzielenia obciążeń na płaskie dźwigary, wg metody rozciętej poprzecznicy (prawa dźwigni).
+                                </p>
+                                <div class='row'>
+                                    <div class='col-md-8'>
+                                        <p>
+                                            Metoda ta zakłada, że pomost składa się z nie współpracujących ze sobą płaskich elementów belkowych opartych przegubowo na dźwigarach głównych.
+                                            Wtedy linia wpływu rozdziału poprzecznego obciążeń będzie identyczna z linią wpływu reakcji elementów pomostu opartych na dźwigarach.
+                                            Znając obciążenie przypadające na wybrany element można wyznaczyć wartości uogólnionych sił wewnętrznych i przemieszczeń,
+                                            wg zasad statyki prętowych ustrojów płaskich przy schematach statycznych wynikających z warunków podparcia rozpatrywanego elementu.
+                                        </p>
+                                    </div>
+                                    <div class='col-md-4'>
+                                        <figure>
+                                            <img class="center-jpg" style="height:150px;" src="../static/img/w5_8.JPG" alt="">
+                                            <figcaption>Linia wpływu rozdziału poprzecznego obciążeń według metody rozciętej poprzecznicy</figcaption>
+                                        </figure>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div id='article-4-2'>
+                                <span class="under">Obliczenia statyczne układu wielodźwigarowego</span>
+                                <p>Wyróżnia się następujące metody obliczeniowe:</p>
+                                <ul>
+                                    <li>Metoda rozciętej poprzecznicy</li>
+                                    <p class='opis'>
+                                        Przy braku sztywności skrętnej ustroju, tj. przy wiotkich stężeniach poprzecznych oraz przy niewspółpracującym pomoście nie połączonym sztywno z dźwigarami,
+                                        można przyjąć elementarną metodę rozciętej poprzecznicy.
+                                    </p>
+                                    <li>Metoda sztywnej poprzecznicy</li>
+                                    <p class='opis'>
+                                        Jeżeli ustrój belkowy jest niezbyt szeroki (B/L&#47;0,5) i posiada sztywne,
+                                        gęsto rozmieszczone poprzecznice,
+                                        to można z pewnym przybliżeniem potraktować go jako ruszt belkowy przegubowy z jedną środkową poprzecznicą nieskończenie sztywną (I<sub>p</sub>— &infin;).
+                                        Przy takim założeniu obciążenie zewnętrzne P,
+                                        działające na poprzecznicę w odległości e od środka ciężkości przekroju belek głównych,
+                                        spowoduje jej przemieszczenie pionowe i obrót.
+                                    </p>
+                                    <li>Metoda rusztu prętowego</li>
+                                    <p class='opis'>
+                                        Ustroje złożone z układu belek podłużnych i poprzecznych, szczególnie wtedy,
+                                        gdy posiadają pomost „izolowany”, można traktować jako ruszt belkowy z uwzględnieniem rzeczywistych sztywności.
+                                        Pręty rusztu w większości przypadków są połączone w węzłach w sposób sztywny i są wtedy narażone na zginanie i skręcanie.
+                                    </p>
+                                    <li>Metoda Guyona-Massoneta-Bareta</li>
+                                    <p class='opis'>
+                                        W obliczeniach mostowych rusztów wielobelkowych, szczególnie przy współpracującej płycie pomostowej,
+                                        wykorzystuje się ich podobieństwo do płyty ortotropowej.
+                                        Założenia: ruszt swobodnie podparty, belki podłużne i poprzeczne mają jednakowe sztywności i są rozmieszczone w stałym odstępie.
+                                        Stosowana w układach ciągłych polega na zastosowaniu współczynników korekcyjnych.
+                                    </p>
+                                    <li>Metoda sztywnych podpór</li>
+                                    <p class='opis'>
+                                        W omówionych przypadkach oraz gdy sztywność poprzecznie jest mała albo wcale ich nie ma,
+                                        a również w mostach szerszych o B\L>0,5 i gdy dźwigary posiadają małą sztywność na skręcanie może być niekiedy przydatna metoda sprężystych podpór.
+                                        W metodzie tej zakłada się, że ciągła poprzecznica czy płyta pomostowa (traktowana jako belka) oparta jest na sprężystych podporach, którymi są dźwigary główne.
+                                    </p>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="#" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

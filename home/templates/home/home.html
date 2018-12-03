@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+            <br>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'wyklad1' %}">
+                        <div class="slide-container">
+                            <img src="../static/img/wykład1.png" alt="" >
+                            <p>Podstawowe pojęcia</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'wyklad2' %}">
+                        <div class="slide-container">
+                            <img src="../static/img/wykład2.JPG" alt="" >
+                            <p>Systemy statyczne.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'wyklad3' %}">
+                        <div class="slide-container">
+                            <img src="../static/img/wykład3.JPG" alt=""  >
+                            <p>Pomosty.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'wyklad4' %}">
+                        <div class="slide-container">
+                            <img src="../static/img/wyklad4.JPG" alt=""  >
+                            <p>Stężenia dźwigarów.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'wyklad5' %}">
+                        <div class='row'>
+                            <div class="slide-container">
+                                <img src="../static/img/wyklad5.jpg" alt=""  >
+                                <p>Formy konstrukcyjne przęseł belkowych i ramowych.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+
+{% endblock %}
+

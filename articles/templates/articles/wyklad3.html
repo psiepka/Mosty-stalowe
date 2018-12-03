@@ -1,0 +1,437 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link active" href="#article-0">Wprowadzenie</a>
+                    <a class="nav-link" href="#article-1">Belki pomostu</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-1-1">Podłużnica</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-2">Poprzecznica</a>
+                    </nav>
+                    <a class="nav-link" href="#article-12">Kształtowanie połączeń belek w mostach stalowych</a>
+                    <a class="nav-link" href="#article-2">Pomosty</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-2 my-1" href="#article-2-1">Pomost otwarty</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-4 my-0" href="#article-2-1-1">Połączenie poprzecznicy z podłużnicą</a>
+                            <a class="nav-link ml-4 my-0" href="#article-2-1-2">Połączenie poprzecznicy z dźwigarem głównym</a>
+                            <a class="nav-link ml-4 my-0" href="#article-2-1-3">Mostownica</a>
+                        </nav>
+                        <a class="nav-link ml-2 my-1" href="#article-2-2">Pomost zamknięty</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-4 my-0" href="#article-2-2-1">Pomost z blach nieckowych</a>
+                            <a class="nav-link ml-4 my-0" href="#article-2-2-2">Pomost z blachy ortotropowej</a>
+                            <a class="nav-link ml-4 my-0" href="#article-2-2-3">Betonowe płyty pomostowe</a>
+                            <a class="nav-link ml-4 my-0" href="#article-2-2-4">Inne pomosty</a>
+                        </nav>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-0">
+                            <span> Wprowadzenie </span>
+                            <p>Pomosty - w klasycznym podziale pomost składa się z dwóch elementów konstrukcyjnych, <u>płyty pomostowej</u> oraz <u>belek pomostu</u> - podłużnic i poprzecznic.</p>
+                            <figure>
+                                <img src="../static/img/w3_1.jpg" alt="">
+                                <figcaption>Plan konstrukcji pomostu</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../static/img/w3_2.jpg" alt="">
+                                <figcaption>Schemat statyczny elementów knostrukcji pomostów</figcaption>
+                            </figure>
+                            <p>Praca statyczna</p>
+                            <ul>
+                                <li>belka pomostu przekazuje obciążenia z płyty pomostowej na dźwigary główne</li>
+                                <li>belka pomostu przekazuje obciążenia z płyty pomostowej na dźwigary główne oraz współpracuje z nimi - tworząc złożony pracujący przestrzennie układ statyczny.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Belki pomostu</span>
+                            <p>
+                                Podłużnice i poprzecznice są elementami konstrukcji pomostu.
+                                Przekazują one obciążenia z płyty pomostowej na dźwigary główne.
+                                Podłużnice są to belki pomostu ułożone równolegle do osi mostu, a poprzecznice prostopadle.
+                                Elementy konstrukcji pomostu — płyta pomostowa, podłużnice i poprzecznice -
+                                oraz poprzecznice z dźwigarami głównymi są konstrukcyjnie połączone i wzajemnie ze sobą współpracują.
+                                Odkształcenie któregokolwiek z tych elementów powoduje odkształcenia pozostałych.
+                                Elementy konstrukcji pomostu i dźwigary główne stanowią jeden złożony ustrój statyczny — ruszt sprężysty o mocno zróżnicowanych sztywnośćiach elementów.
+                            </p>
+                            <div id='article-1-1'>
+                                <span class="under">Podłużnica</span>
+                                <p>Rola:</p>
+                                <p>- przenoszą duże obciążenia ruchome, mają dużą sztywność w płaszczyźnie pionowej, natomiast stosunkowo małą w płaszczyźnie poziomej. </p>
+                                <p>Są drugorzędnymi elementami, nie mającymi większego wpływu na prace rusztu mostowego.</p>
+                                <p>Geometria:</p>
+                                <ul>
+                                    <li>w mostach kolejowych <sup>h</sup>/<sub>L</sub> = <sup>1</sup>/<sub>8</sub> do <sup>1</sup>/<sub>10</sub> </li>
+                                    <li>w mostach drogowych <sup>h</sup>/<sub>L</sub> = <sup>1</sup>/<sub>10</sub> do <sup>1</sup>/<sub>12</sub> </li>
+                                </ul>
+                                <p>Rozstaw:</p>
+                                <ul>
+                                    <li>w pomoście otwartym: 1,5-1,8m</li>
+                                    <li>w pomoście pomostu z blach nieckowych: 1,0-2,5m</li>
+                                    <li>w przypadku płyty żelbetowej: 1,5-3,0m</li>
+                                </ul>
+                                <p>Konstrukcja:</p>
+                                <ul>
+                                    <li>belki walcowane - dla rozpiętości do 3m (najczęściej dwuteowe)</li>
+                                    <li>belki z blach nitowanych lub spawanych - dla wiekszych rozpiętości </li>
+                                </ul>
+                                <p>Schemat statyczny:</p>
+                                <ul>
+                                    <li>belka swobodnie podparta</li>
+                                    <li>belka ciągła</li>
+                                </ul>
+                            </div>
+                            <div id='article-1-2'>
+                                <span class="under">Poprzecznica</span>
+                                <p>Rola:</p>
+                                <ul>
+                                    <li>zwiększają sztywność poprzeczną przy zachowaniu wiotkiej płyty pomostowej</li>
+                                    <li>poprawiają współpracę między dźwigarami głównymi</li>
+                                    <li>
+                                        przenosi:
+                                        <ul>
+                                            <li>obciążenia pionowe - ciężar własny, obciążenie z podłużnie i pomostu, obciążenie ruchome</li>
+                                            <li>obciążenia poziome - wpływ hamowania pociągów na moście, wpływ zmiany długości pasów dźwigarów głównych (zjawisko zostanie opisane w artykule związanym ze stężeniami)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>Geometria:</p>
+                                <p>Proporcja <sup>h</sup>/<sub>L</sub> zależy od : </p>
+                                <ul>
+                                    <li>położenia pomostu</li>
+                                    <li>rozstawu dźwigarów główynch </li>
+                                    <li>obciążeń</li>
+                                    <li>dostępnej wysokości konstrukcyjnej</li>
+                                    <li style="list-style-type: none;"> - waha się od <sup>1</sup>/<sub>5</sub> do <sup>1</sup>/<sub>10</sub></li>
+                                </ul>
+                                <p>Rozstaw:</p>
+                                <ul>
+                                    <li>dźwigary blachownicowe</li>
+                                    <ul>
+                                        <li>1,5 - 2,5 [m] -- mosty kolejowe </li>
+                                        <li>2,0 - 4,0 [m] -- mosty drogowe</li>
+                                    </ul>
+                                    <li>dźwigary kratownicowe</li>
+                                    <ul>
+                                        <li>rozstaw wezłów lub tak jak wyżej </li>
+                                    </ul>
+                                </ul>
+                                <p>Konstrukcja:</p>
+                                <ul>
+                                    <li>belki z blach nitowanych lub spawanych (najczęsciej)</li>
+                                </ul>
+                                <p>Schemat statyczny:</p>
+                                <ul>
+                                    <li>belka swobodnie podparta</li>
+                                    <li>belka ciągła</li>
+                                    <li>belka sprężyście zamocowana obustronnie utwierdzona</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <span id="article-12">Kształtowanie połączeń w mostach stalowych</span>
+                        <p>Ogólne zasady połaczeń:</p>
+                        <ul>
+                            <li>
+                                mocowanie podłużnic z poprzecznicami oraz poprzecznic z dźwigarami głownymi wykonane jest za pośrednicwtem żeberek belki wyższej
+                            </li>
+                            <li>
+                                sposób mocowania podprzędnej belki ciągłej do belki nadrzędnej zapewnia przekazywanie momentów nad podporą
+                            </li>
+                        </ul>
+                    </article>
+                    <article>
+                        <span id='article-2'>Płyta pomostowa </span>
+                        <p>
+                            - może występować bez belek pomostu i odwrotnie — belki pomostu bez płyty. Stosuje się dwa rozwiązania pomostu:
+                            <ul>
+                                <li>
+                                    pomost otwarty
+                                </li>
+                                <li>
+                                    pomost zamknięty
+                                </li>
+                            </ul>
+
+                        </p>
+                        <div id="article-2-1" class="main-article">
+                            <span class="under">Pomost otwarty</span>
+                            <p>
+                                - tworzy go ruszt poprzecznic (Pp) oraz podłużnic (Pd), nie posiadają płyty pomostowej,
+                                szyny kolejowe oparte są na mostownicach lub bezpośrednio na belkach pomostu.
+                            </p>
+                            <p>
+                                Rozwiązanie stosowane wyłącznie w starych mostach kolejowych (obecnie nie stosowane).
+                                Wyłącznie w mostach, w wiaduktach ze względu na ochronę pojazdów oraz pieszych musi być płyta pomostowa
+                            </p>
+                            <figure>
+                                <img src="../static/img/w3_1.jpg" alt="">
+                                <figcaption>Plan konstrukcji pomostu</figcaption>
+                            </figure>
+                            <div id='article-2-1-1'>
+                                <span class="under">Połączenie poprzecznicy z podłużnicą</span>
+                                <p>
+                                    Połączenia podłużnie z poprzecznicami mogą być wykonstruowane na zasadzie swobodnego podparcia lub też za pomocą sztywnego węzła.
+                                </p>
+                                <p>
+                                    Górne pasy belki nższej (Pd) łączy się nakładkami ciągłości ("rybkami"),
+                                    a pas dolny mocuje się do odpowiednio wykonanych żeber belki wyższej - "stolików".
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w3_2-1-1.jpg" alt="">
+                                    <figcaption>Połączenie podłużnie z poprzecznicą w konstrukcji spawano-nitowanej, w moście z pomostem otwarym.</figcaption>
+                                </figure>
+                                <p>
+                                    Ze względu na wpływy dynamiczne belki pomostu muszą być odpowiednio sztywne. Stan graniczny może nie być decydujący.
+                                </p>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <p>
+                                            Na rysunku powyżej połączenie górnych pasów Pd z Pp krzyżuje się w tym samym poziomie.
+                                            Mocowanie górnego pasa bezpośrednio do pasa poprzecznicy łagodzi skokowe zmiany przekroju (kształtu) w celu ograniczenia  karbów naprężeń.
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <figure>
+                                            <img class="center-jpg" style="height:150px;" src="../static/img/w3_2-1-2.jpg" alt="">
+                                            <figcaption>Połączenie pasów górnych podłużnicy z poprzecznicą w konstrukcji spawano-nitowanej w tym samym poziomie</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-4">
+                                        <figure>
+                                            <img class="center-jpg" style="height:150px;" src="../static/img/w3_2-1-3.jpg" alt="">
+                                            <figcaption>Połączenie pasów górnych podłużnie z poprzecznicą w konstrukcji spawanej w tym samym poziomie</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <br>
+                                <p>
+                                    Połaczenie pasów górynch Pd z Pp może również krzyżować się w różnych poziomach. W tym przypadku nakładka ciągłości, tzw. rybka,
+                                    składa się tutaj z dwóch części przyspawanych w wytwórni do środnika poprzecznicy lub jest przeprowadzona przez otwór w środniku Pp.
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w3_2-1-4.jpg" alt="">
+                                    <figcaption>Połączenie pasów górnych podłużnicy z poprzecznicą w różnych poziomach.</figcaption>
+                                </figure>
+                            </div>
+                            <div id="article-2-1-2">
+                                <span>Połączenie poprzecznicy z dźwigarem głównym</span>
+                                <p>
+                                    Połączenie takie sytuuje się z reguły w węzłach pasa górnego lub dolnego oraz w słupkach w przypadku jezdni pośredniej.
+                                    Wykonuje się za pośrednictwem sztywnego węzła typu wezłów ram.
+                                    W prostych przypadkach węzeł ten uzyskuje się przez zastosowanie blachy narożnej, najczęściej jednak, tak w przypadku jazdy dołem jak i jazdy górą, konstruuje się tzw. półramy.
+                                    Półramę stanowi tutaj poprzecznica połączona z poszerzonym, zbieżnie ukształtowanym żebrem dźwigara głównego.
+                                </p>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-2-3.jpg" alt="">
+                                    <figcaption>Połączenie poprzecznicy z dźwigarem głównym w przypadku jezdni dolnej</figcaption>
+                                </figure>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-2-4.jpg" alt="">
+                                    <figcaption>Połączenie poprzecznicy z dźwigarem głównym przy jezdni górnej</figcaption>
+                                </figure>
+                                <p>
+                                    W przypadku dźwigarów kratowych połączenie takie sytuuje się z reguły w węzłach pasa górnego lub dolnego oraz w słupkach w przypadku jezdni pośredniej.
+                                </p>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-2-1.jpg" alt="">
+                                    <figcaption>Połączenia poprzecznicy z dźwigarem głównym kratowym</figcaption>
+                                </figure>
+                                <p> &#9830; W narożu stosujemy usztywniające żeberka - "wstawki" &#8593; lub zwiększamy wysokość środnika  &#8595;</p>
+                                <p> &#9830; Pas dźwigara kratownicowego usztyniamy przeponą w płaszczyźnie środnika Pp</p>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-2-2.jpg" alt="">
+                                    <figcaption>Połączenie poprzecznicy z dźwigarem głównym kratowym za pomocą blachy narożnej w moście z jezdnią dolną</figcaption>
+                                </figure>
+                            </div>
+                            <div id="article-2-1-3">
+                                <span>Mostownica</span>
+                                <p>
+                                    - belka używana jako podkład pod szyny na kolejowym obiekcie mostowym.
+                                </p>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-3-2.jpg" alt="">
+                                    <figcaption>Schemat przekroju mostu z mostownicą</figcaption>
+                                </figure>
+                                <p>
+                                    Najprostszym rozwiązaniem stalowego mostu jest most kolejowy o belkach głównych
+                                    z profili pełnościennych z jazdą na <b>mostownicach</b>.
+                                    W mostach większych mostownice układamy na podłużnicach.
+                                    Zalety mostownic to: sprężysta jazda, tłumienie hałasu, takie samo mocowanie szyn na moście, jak na linii.
+                                    Stosujemy mostownice drewniane lub rzadziej stalowe — lepsze są drewniane, bo jazda jest bardziej sprężysta i cicha.
+                                    Wymiary mostownic zależne są od rozstawu punktów podparcia.
+                                    Zasady konstruowania pomostów z mostownicami - mostownice mocuje się do górnych pasów dźwigarów głównych względnie podłużnie.
+                                    Jeśli pas dźwigara nie jest szerszy niż 25 cm, mostownice opieramy bezpośrednio na pasie,
+                                    jeśli jest szerszy, to dla uniknięcia ewentualnego zginania poprzecznego pasa dajemy pod mostownicę stalową podkładkę centrującą.
+                                </p>
+                                <figure>
+                                    <img class="center-jpg" src="../static/img/w3_2-1-3-1.jpg" alt="">
+                                    <figcaption>Zamocowanie mostownicy</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div id="article-2-2" class="main-article">
+                            <span class="under">Pomost zamknięty</span>
+                            <p> - jezdnia lub tor kolejowy ułożony jest na płycie pomostowej. </p>
+                            <p>W rozwiązaniach klasycznych pomosty mają zwykle podłużnice i poprzecznice, w nowszych często nie ma podłużnic.</p>
+
+                            <div id="article-2-2-1">
+                                <span class="under">Pomost z blach nieckowych / cylindrycznych</span>
+                                <figure>
+                                    <img src="../static/img/w3_2-2-1.jpg" alt="">
+                                    <figcaption>Blacha nieckowa</figcaption>
+                                </figure>
+                                <p>
+                                    Blachy nieckowe - prostokątne blachy wytłaczane do kształtu niecki z poziomym kołnierzem stanowiącym obramowanie.
+                                    Najczęściej stosowane są wymiary: 1,0 x 1,5 m, 1,5 x 1,8 m, 1,8 x 2,0 m.
+                                    Grubość między 7 i 10 mm, strzałka niecki 1 : 10 krótszego boku.
+                                    Czasem zdarzają się inne wymiary.
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w3_2-2-2.jpg" alt="">
+                                    <figcaption>Połączenie blach nieckowych</figcaption>
+                                </figure>
+                                <p>
+                                    Blachy nieckowe łączono z pasami belek pomostu (lub dźwigarów głównych) za pomocą nitów.
+                                </p>
+                                <br><br>
+                                <p>
+                                        <b>Odwodnienie</b> blach nieckowych. <br>
+                                        Woda opadowa zbierająca się w blasze nieckowej musi być odprowadzona.
+                                        Urządzenie do odprowadzenia wody z blachy nieckowej pokazano na rys. poniżej.
+                                        Pod pomostem musi być umieszczona rynna odprowądzająca wodę z blach nieckowych
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w3_2-2-3.jpg" alt="">
+                                    <figcaption>Odwodnienie pomostu z blach nieckowych z jazdą pośrednią</figcaption>
+                                </figure>
+                                <p>
+                                    W mostach drogowych, jako elementy podtrzymujące płytę pomostową chętnie stosowano blachy nieckowe.
+                                    Blachy te były wypełniane betonem.
+                                    Na to układano izolację. W mostach drogowych stosowano większe blachy nieckowe,
+                                    mające natomiast mniejszą strzałkę: 1/25 — 1/30. Wymiary blach dochodzą do 4x7 m.
+                                    Przy dużych blachach nieckowych występuje duże zginanie poprzeczne samych blach oraz podłużnie.
+                                    Pomosty te są wzmoconone,  szczególnie przeciw rysom nad podłużnicami i poprzecznicami poprzez uzbronienie betonu wewnątrz płyt
+                                    (szczególnie nad podparciami blach) lub przez przyspawanie kotew lub dodatkowe wzmocnienie płaskownikami.
+                                </p>
+                                <div class="row">
+                                    <div class='col-6'>
+                                        <figure>
+                                            <img style="height:120px" src="../static/img/w3_2-2-4.jpg" alt="">
+                                            <figcaption>Płyta pomostowa z blach nieckowych, wzmocniony zbrojenie wewnątrz płyty.</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class='col-6'>
+                                        <figure>
+                                            <img style="height:120px" src="../static/img/w3_2-2-5.jpg" alt="">
+                                            <figcaption>Płyta pomostowa z blach nieckowych, wzmocniony płaskownikami.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="article-2-2-2">
+                                <span class='under'> Pomost z blachy ortotropowej </span>
+                                <p>
+                                    Płyta ortotropową jest płaskim, prostokątnym dźwigarem powierzchniowym.
+                                    Konstrukcja pomostu składa się zwykle z płaskiej blachy, żeber podłużnych oraz poprzecznic.
+                                    Charakteryzuję się zróżnicowaną sztywnością w kierunkach prostopadłych.
+                                </p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="../static/img/w3_2-2-6.jpg" alt="">
+                                            <figcaption>Użebrowania płyt pomostowych z blachy ortotropowej <br> o przekroju otwartym i zamkniętym</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-6">
+                                        <figure>
+                                            <img src="../static/img/w3_2-2-7.jpg" alt="">
+                                            <figcaption>Płyta pomostowa z blachy ortotropowej</figcaption>
+                                        </figure>
+                                    </div>
+                                    <p>
+                                        Minimalna grubość blachy ortotropowej wynosi 12mm, ale zaleca sie przyjmowac grubość w granicach 14-18 mm.
+                                    </p>
+                                    <p>
+                                        Rozróżnić można dwie grupy żeber: żebra o profilu otwartym i żebra o profilu zamkniętym.
+                                        Grubość blach żeber wynosi przeciętnie 6-10 mm.
+                                        Żebra o profilu otwartym charakteryzują się prostotą wykonania, lecz matą sztywnością na zginanie i skręcanie.
+                                        Przekroje zamknięte cechuje duża sztywność giętna, skrętna i tarczowa.
+                                        Rozstaw między osiami żeber podłużnych przy przekroju otwartym 250-400 mm, zamkniętym 600-700 mm.
+                                        Wybór kształtu żeberek wpływa na rozstaw poprzecznie.
+                                        Przy żeberkach o profilu otwartym rozstaw poprzecznie nie przekracza 1,4-i-2,2 m, natomiast przy żeberkach o profilu zamkniętym może być zwiększony do około 4 m.
+                                        Ze względu na tarczowy charakter pracy, żeberka podłużne przechodzą nieprzerwanie przez poprzecznice.
+                                    </p>
+                                    <figure>
+                                        <img src="../static/img/w3_2-2-8.jpg" alt="">
+                                        <figcaption>Pomost z blachy ortotropowej <br> a) przekrój poprzeczny b) przekrój podłużny.</figcaption>
+                                    </figure>
+                                    <p>
+                                        Otwory (przy żebrach podłuznych) wykonywane po to by nie krzyżować spoin, w wyniku czego spadła by wytrzymałość materiałów w danym miejscu.
+                                    </p>
+                                    <figure>
+                                        <img src="../static/img/w3_2-2-9.jpg" alt="">
+                                        <figcaption>Połączenie poprzecznicy z dźwigarem głównym</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div id="article-2-2-3">
+                                <span class="under">Betonowe płyty pomostowe</span>
+                                <p>
+                                    Do bardzo częstych rozwiązań należy obecnie żelbetowa płyta pomostowa. Stosowane są tutaj dwa różne rozwiązania:
+                                    <ul>
+                                        <li>płyta jest swobodnie oparta na konstrukcji</li>
+                                        <li>płyta jest z konstrukcją związana i z nią współpracuje (pomosty zespolone)</li>
+                                    </ul>
+                                    Rozwiązanie pierwsze jest konstrukcyjnie prostsze, w rozwiązaniu drugim uzyskujemy lepsze efekty na nośności podłużnie i dźwigarów głównych dzięki ich współpracy z płytą.
+                                </p>
+                                <p>
+                                    Minimalna grubość 20cm - mosty, 14cm - kładeki dla pieszych.
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w3_2-2-10.jpg" alt="">
+                                    <figcaption>Betonowa płyta pomostowa o konstrukcji żebrowej</figcaption>
+                                </figure>
+                            </div>
+                            <div id="article-2-2-4">
+                                <span class="under">Pomost amerykański</span>
+                                <p>
+                                    Stosujemy przekładki wibroizolacyjne. Nie ma możliwości rektyfikacji niwelety, wszsytko przygotowane jest "na sztywno". Charakteryzuje się bardzo mała wysokościa konstrukcyjną ~ 60cm.
+                                </p>
+                                <span class="under">Pomost z tworzyw sztucznych</span>
+                                <p>
+                                    Elementy płyty pomostu, wykonywane z polimeru wzmocnione włóknem szklanym. Klejone są do półek górnych dźwigarów stalowych.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="#" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

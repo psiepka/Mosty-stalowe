@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link active" href="#article-1">Granica plastyczności </a>
+                    <a class="nav-link" href="#article-2">Ciągliwość </a>
+                    <a class="nav-link" href="#article-3">Wpływ składu chemicznego na stal </a>
+                    <a class="nav-link" href="#article-4">Udarność</a>
+                    <a class="nav-link" href="#article-5">Wytrzymałość zmęczeniowa</a>
+                    <a class="nav-link" href="#article-6">Spawalność</a>
+                    <a class="nav-link" href="#article-7">Starzenie sie stali</a>
+                    <a class="nav-link" href="#article-8">Wymagania stawiane współczesnym <br> stalom konstrukcyjnym</a>
+                    <a class="nav-link" href="#article-9">Stale używane w przeszłości</a>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                <article>
+                    <span id="article-1"> Granica plastyczności  -  <b>f<sub>y</sub></b></span>
+                    <p>f<sub>y</sub> &isin; (235-460) MPa   to wartość naprężenia, przy którym zaczynają powstawać nieodwracalne mikroskopijne odkształcenia plastyczne we wszystkich ziarnach lub naprężenie w którym występuje płynięcie metalu pod wpływem stałego obciążenia.</p>
+                    <p>Określana przez <a href="https://kmpkm.zut.edu.pl/pub/Ogloszenia/Konowalski%20Konrad/Skrypty/Statyczna%20pr%C3%B3ba%20rozci%C4%85gania%20metali.pdf" target="_blank"> statyczną próbe rozciągania metali </a></p>
+                        <p>Wykres rozciagania stali:</p>
+                        <ol style="list-style: none;">
+                            <div class='row'>
+                                <div class="col-md-6">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <li>
+                                        <figure>
+                                            <img src="../static/img/w1_2.jpg" alt="">
+                                            <figcaption>wykazujących wyraźną granicę plastyczności (stale "miękkie" - niskowęglowe)</figcaption>
+                                        </figure>
+                                    </li>
+                                </div>
+                                <div class="col-md-6">
+                                    <li>
+                                        <figure >
+                                            <img src="../static/img/w1_1.jpg" alt="">
+                                            <figcaption >niewykazujących wyraźną granicę plastyczności (stale "twarde" - wysokowęglowe)</figcaption>
+                                        </figure>
+                                    </li>
+                                </div>
+                            </div>
+                        </ol>
+                </article>
+
+                <article>
+                    <span id="article-2">Ciągliwość</span>
+                    <p>
+                        Ciągliwość to zdolność materiału do uzyskiwania znacznych odkształceń przy niewielkim przyroście naprężeń po przekroczeniu granicy plastyczności. Pojęcie to odnosi się do pracy konstrukcji w stanie awaryjnym, gdy odkształcenia zaczynają przyrastać nieliniowo w stosunku do naprężeń i są nieodwracalne.
+                    </p>
+                </article>
+
+                <article>
+                    <span id="article-3">Wpływ składu chemicznego na stal</span>
+                        <div>
+                            <ul>
+                                <li>
+                                    <span class="under">Węgiel (C)</span>
+                                    <p>
+                                        Zawartośc węgla w stali wpływa na ich własności mechaniczne. Każda stal jest stopem żelaza, węgla i innych składników (nawet stale niestopowe). Węgiel zawsze występuje w stali.
+                                    </p>
+                                    <figure>
+                                        <img src="../static/img/w1_3.jpg" alt="">
+                                        <figcaption>Wpływ węgla na własności mechaniczne stali węglowych
+                                            <p class="info">HBW-twardość Brinella, R<sub>m</sub>-wytrztmałość na rozciąganie, R<sub>e</sub>-granica plastyczność, A-wydłużenie, Z-przewężenie</p>
+                                        </figcaption>
+                                    </figure>
+                                    <p>Zawartość węgla w zasadniczy sposób wpływa na własności mechaniczne stali i jej strukturę, zwiększając wytrzymałość na rozciąganie, granice plastyczności i twardość a zmniejszając udarność przewężenie i wydłużenie</p>
+                                </li>
+                                <li>
+                                    <span class="under">Mangan (Mn)</span>
+                                    <p>
+                                        - zwiększa wytrzymałość i naturalną twardość stali, oraz jej odporność na uderzenia, nie zmieniając jej ciągliwości.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="under">Chrom (Cr)</span>
+                                    <p>
+                                        - w stalach niskostopowych i niskowęglowych wpływa na wzrost wytrzymałości i twardości oraz podwyższa udarność.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="under">Wanad (V) </span>
+                                    <p>
+                                        - zwiększa odporność na przegrzanie i wzrostu wytrzymałości w podwyższonych temperaturach.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="under">Molibden (Mo) </span>
+                                    <p>
+                                        - intensywnie zwiększa hartowność stali dużo bardziej niż chrom czy wolfram. Znacznie zmniejsza kruchość stali występującą przy wysokim odpuszczaniu. 
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <span class="under">Nikiel (Ni)</span>
+                                    <p>
+                                        wpływa na podwyższenie się wytrzymałości i twardości przy zachowaniu wysokiej udarności.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="under">Miedź (Cu)</span>
+                                    <p>
+                                        -zwiększa wytrzymałość i granicę plastyczności stali, nie pogarszając zbytnio jej własności plastycznych, a równocześnie uodparnia stal na działanie korozji atmosferycznej.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="under">Krzem (Si) </span>
+                                    <p>- w mniejszych ilościach wpływa korzystnie, powiększając sprężystość, twardość i wytrzymałość stali, w większych powoduje kruchość, zmniejsza odporność na uderzenia, ale też podnosi odporność na wysokie temperatury. </p>
+                                </li>
+                                <li>
+                                    <span class="under">Siarka (S)</span>
+                                    <p> -  utrudnia kucie stali, czyniąc ją kruchą na gorąco (pogarsza spawalność stali).</p>
+                                </li>
+                                <li>
+                                    <span class="under">Fosfor (P) </span>
+                                    <p> - zmniejsza wytrzymałość stali i odporność na uderzenie — po większa jej twardość, oraz powoduje kruchość na zimno.</p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                </article>
+
+                <article>
+                    <span id="article-4">Udarność</span>
+                    <p>zdolność do przenoszenia obciązenia pod wypływem uderzeń. Udarność (prace łamania) określa sie za pomocą młota charpy`ego. </p>
+                    <figure>
+                        <img src="../static/img/w1_4.jpg" alt="">
+                        <figcaption>Tabela oznaczenia pracy łamania stali.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <span id="article-5">Wytrzymałość zmęczeniowa</span>
+                    <p>
+                        określa odpornośc na działanie obciązeń wielokrotnie zmiennych, czyli napreżeń maksymalnych &sigma;<sub>max</sub> cyklu stacjonarnego, 
+                        przy którym próbka czy element nie ulegają jeszcze zniszczeniu po osiągnięciu założonej granicznej liczbie cykli (zazwyczaj przyjmujemy n = 2 * 10 <sup>6</sup> ).
+                         Istotny wpływ na wytrzymałość zmęczeniową mają spiętrzenia naprężeń występujące w miejscach zmiany kształtu lub wymiaru elementu - karby naprężeń. Wyznaczamy za pomocą <u>wykresu Wöhlera</u>.
+                    </p>
+                    <p></p>
+                </article>
+
+                <article>
+                    <span id="article-6">Spawalność</span>
+                    <p>- określa zdolność do spajania się metali w trawłe połączenia o właściwościach odpowiadających materiałowi rodzimemu. Wynika z zawartości węgla oraz zawarotści składników stopowych w stali </p>
+                    <figure>
+                        <img src="../static/img/w1_5.jpg" alt="">
+                        <figcaption>Wzór na równoważnik węgla</figcaption>
+                    </figure>
+                    <p>Stale o zawartości C<sub>E</sub>&le;0,50% oraz C&le;0,22% określa stan spawalny.</p>
+                </article>
+
+
+                <article>
+                    <span id="article-7">Starzenie sie stali</span>
+                    <p>- zjawisko nieporządane. Polega na samoistnym wydzielaniu się ze stali ferrytu.</p>
+                    <p>Zjawisko powoduje:</p>
+                    <ul>
+                        <li>
+                            wzrosta wytrzymałości stali
+                        </li>
+                        <li>
+                            maleją właściwości plastyczne (ciągliwość)
+                        </li>
+                    </ul>
+                </article>
+
+                <article>
+                    <span id="article-8">Wymagania stawiane współczesnym stalom konstrukcyjnym</span>
+                    <ul class='lista-1'>
+                        <li>
+                            granica plastyczności (f<sub>y</sub>) : 235 - 460 MPa
+                        </li>
+                        <li>
+                            ciągliwość, stosowane są stale o wysokiej klasie ciągliwości.
+                            <ul class="lista-2">
+                                <li>
+                                    wydłużenie przy zerwaniu nie mozę być mniejsze od 5%
+                                </li>
+                                <li>
+                                    <p><span class="frac"><sup>granica wytrzymałości</sup><span>/</span><sub>granica plastyczności</sub></span> &ge; 1,10 </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            odpowiedznia wytrzymałość zmęczeniowa - odporność na działanie obciążenie wielokrotnie zmiennych. Określa się dla 2*10<sup>6</sup> cykli zmieniających się naprężeń.
+                        </li>
+                        <li>
+                            odporność na :
+                            <ul class="lista-2">
+                                <li>strzenie - starzenie się stali powoduje wzrost wytrzymałości i zmniejszenie właściwości plastycznych stali. Stal staje się krucha. Zjawisko bardzo niepożądane.</li>
+                                <li>korozje - zawierająca pierwiastki stopowe powodujące wzrost odporności na korozje, zależną od obszarów zastosowania.</li>
+                                <li>kruche pękanie - wykonuje się badania udarności, czyli w określonej temeraturze rożnicuje się energie uderzenia i następnie określa się prace łamania oraz odporność na kruche pękanie.</li>
+                            </ul>
+                        </li>
+                        <li>spawalność - stal musi być spawalna, określa się na podstawie równoważlnika węgla.</li>
+                    </ul>
+                </article>
+                <article>
+                    <span id="article-9">Stale używane w przeszłości</span>
+                    <p>Stale te charakteryzowały się :</p>
+                    <ul class="lista-1">
+                        <li>anizotropia, właściwości zależne od kierunku walcowania </li>
+                        <li>niska zawartość węgla, duża siarki i fosforu, w wyniku stal wykazywała :
+                            <ul class="lista-2">
+                                <li>podwyższoną wytrzymałość</li>
+                                <li>zmiejszoną wydłużalność</li>
+                                <li>brak wyraźnej granicy plastyczność</li>
+                                <li>małą udarność</li>
+                                <li>małą wytrzymałość zmęczeniowa</li>
+                                <li>niespawalność</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="#" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+
+        </div>
+    </div>
+</div>
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

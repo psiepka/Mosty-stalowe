@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Stężenia dźwigarów</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-1-1">Stężenia podłużne</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-4 my-0" href="#article-1-1-1">Wiatrownice</a>
+                            <a class="nav-link ml-4 my-0" href="#article-1-1-2">Tężnik hamowny</a>
+                        </nav>
+                        <a class="nav-link" href="#article-1-1-3">Wpływ zmian długości pasów</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-2">Stężenia poprzeczne</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-4 my-0" href="#article-1-2-1">Stężenia międzypodłużnicowe</a>
+                        </nav>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Stężenia dźwigarów</span>
+                            <p>
+                                Zadaniem konstrukcji przęsła, przy zachowaniu jej geometrycznej niezmienności jako bryły przestrzennej, jest przejmowanie i przekazywanie na podpory obciążeń pionowych i poziomych.
+                                W mostach stalowych pełnią znacznie ważniejszą role niż w mostach betonowych.
+                                W spełnieniu tej roli oprócz dźwigarów głównych i konstrukcji pomostu uczestniczą także połączenia (stężenia) między dźwigarami głównymi.
+                                W zależności od kierunku, w jakim stężenia przekazują siły, rozróżniamy stężenia <u>podłużne</u> i stężenia <u>poprzeczne</u>.
+                                Stężenia podłużne (kratowe) sytuowane są w poziomych płaszczyznach dolnych i górnych pasów dźwigarów głównych,
+                                natomiast stężenia poprzeczne (kratowe lub pełnościenne) w płaszczyznach pionowych lub nachylonych we wszystkich węzłach dźwigarów głównych (pod poprzecznicami, w węzłach dźwigarów kratowych).
+                                Rolę górtnych wiatrownic może pełnić współpracująca płyta pomostowa.
+                            </p>
+                            <p>
+                                Połączenia (stężenia) poprzeczne wraz z elementami pomostu biorą udział w wyrównywaniu nierównomierności obciążenia (przeciążenia) dźwigarów głównych, będących efektem mimośrodowego działania obciążeń pionowych i poziomych.
+                                Szczególną rolę spełniają stężenia poprzeczne usytuowane w płaszczyznach podparć dźwigarów głównych na łożyskach.
+                                Są to tzw. <em>ramy podporowe</em>, które wraz ze stężeniami podłużnymi zamykają wszystkie płaszczyzny ograniczające konstrukcję przęsła, zapewniając jej geometryczną niezmienność.
+                                Stąd widać, że dla zapewnienia geometrycznej niezmienności konstrukcji przęsła, pozostałe stężenia poprzeczne nie są konieczne. W tej roli dublują one w pewnym sensie układ: stężenia podłużne plus ramy podporowe.
+                                Także w praktyce, stosując stężenia poprzeczne we wszystkich węzłach dźwigarów głównych, można zrezygnować z jednego z układów stężeń podłużnych, ponieważ stężenia poprzeczne mogą utrzymywać w niezmiennym położeniu węzły drugiego pasa.
+                            </p>
+                            <figure>
+                                <img src="../static/img/w4_3.JPG" alt="">
+                                <figcaption>Schematy ram podporowych mostów kratowych zamkniętych</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="../static/img/w4_1.JPG" alt="układy stężeń">
+                            </figure>
+                            <p>
+                                W zależności od występujących elementów stężeń rozróżniamy następujące układy stężeń:
+                                <ol type="a">
+                                    <li>
+                                        w mostach z jazdą górną:
+                                        <ul>
+                                            <li>
+                                                wiatrownice górne, ramy podporowe, wiatrownice dolne,
+                                            </li>
+                                            <li>
+                                                wiatrownice górne, stężenia poprzeczne,
+                                            </li>
+                                            <li>
+                                                stężenia poprzeczne, wiatrownice dolne,
+                                            </li>
+                                            <li>
+                                                wiatrownice górne, stężenia poprzeczne, wiatrownice dolne,
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        w mostach z jezdnią dolną:
+                                        <ul>
+                                            <li>wiatrownice górne, ramy podporowe, wiatrownice dolne,</li>
+                                            <li>
+                                                wiatrownice górne, stężenia poprzeczne, wiatrownice dolne,
+                                            </li>
+                                            <li>
+                                                wiatrownice górne tylko na części pasów górnych, dwa stężenia poprzeczne położone na krańcach górnego układu wiatrownic, wiatrownice dolne — most częściowo otwarty,
+                                            </li>
+                                            <li>
+                                                stężenia poprzeczne w postaci sztywnych półram, wiatrownice dolne — most otwarty.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                <p>W mostach z jezdnią górną o pomoście z blach nieckowych, stalowej płyty ortotropowej lub płyty żelbetowej, pomost taki zastępuje układ wiatrcwnic górnych.</p>
+                            </p>
+                            <div id='article-1-1'>
+                                <span class="under">Stężenia podłużne</span>
+                                <p>
+                                    Połączenia (stężenia) podłużne pracują głównie na działanie parcia wiatru — <u>wiatrownice (tężniki wiatrowe)</u> i siły powodowane hamowaniem taboru na moście - <u>tężniki hamowne</u>.
+                                    Usytuowane w płaszczyźnie dolnych i górnych pasów dźwigarów. Najczeście o przekroju kratowym.
+                                </p>
+                                <br>
+                                <div id='article-1-1-1'>
+                                    <p><b>Wiatrownice</b></p>
+                                    <p>
+                                        Kraty wiatrownicowe <u>zależą</u> od rozstawu dźwigarów głównych oraz długości przedziałów (rozstawu poprzecznie).
+                                    </p>
+                                    <p>Pasami kratownic wiatrowych są pasy dźwigarów głównych.</p>
+                                    <figure>
+                                        <img src="../static/img/w4_2.JPG" alt="">
+                                        <figcaption>Układy wiatrownic</figcaption>
+                                    </figure>
+                                </div>
+                                <div id='article-1-1-2'>
+                                    <br>
+                                    <p><b>Tężniki hamowne</b></p>
+                                    <p>
+                                        Zadaniem tężników hamownych jest przeniesienie obciążeń poziomych z podłużnic na dźwigary główne lub bezpośrednio na stałe łożyska mostu (z pominięciem poprzecznic).
+                                        W związku z tym podłużnice muszą być ciągle, a jeżeli są rozcięte, to na każdym odcinku podłużnicy musi być tężnik hamowny.
+                                        Aby tężnik spełniał swoje zadanie, musi być odpowiednio sztywny.
+                                        Przy konsturowaniu tężników wykorzystuje się zazwyczaj krzyżulce wiatrownicowic.
+                                        W mostach zespolonych rolę tęzników hamownych przejmuje płyta pomostowa.
+                                    </p>
+                                    <figure>
+                                        <img src="../static/img/w4_4.JPG" alt="układ tężników hamownych">
+                                    </figure>
+                                    <p>
+                                        Jeśli tężniki hamowne są na końcach przęsła, to przy hamowaniu obciążony jest zawsze tylko jeden tężnik.
+                                        Jeśli zastosuje się jeden tężnik w środku, to uzyska się rozwiązanie lepsze.
+                                        Przy hamowaniu od tężnika część podłużnie jest wtedy rozciągana.
+                                        Jeśli w środku przęsła nie ma poprzecznicy, to dajemy dwa tężniki hamowne przy dwóch poprzeczniach sąsiadujących ze środkiem tego przęsła.
+                                        Przy dużych rozpiętościach przęseł (powyżej 80 m) zamiast jednego tężnika w środku daje się dwa tężniki pośrednie.
+                                    </p>
+                                    <p>
+                                        Tężniki hamowne stosuje się aby pomost mostu:
+                                        <ul>
+                                            <li>
+                                                zabezpieczyć od obciążeń pochodzących od hamowania
+                                            </li>
+                                            <li>
+                                                usztywnić poprzecznice w kierunku poziomym (przeciw wyboczeniu), zmniejszyć <b>wpływ zmiany długości pasów dźwigarów głównych.</b>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id='article-1-1-3'>
+                                <br>
+                                <b><u><p>Wpływ zmiany długości pasów dźwigarów głównych *</p></u></b>
+                                <p>
+                                    Poprzecznice są łączone z dźwigarami oraz podłużnicami w sposób sztywny.
+                                    W wyniku obciążenia pionowego (zwłaszcza ruchomego) pasy dźwigarów głównych ulegają sprężystemu skróceniu (górnę) i wydłużeniu (dolne).
+                                    Odkształceniom podobnym ulegają również podłużnice, ale w stopniu znacznie mniejszym.
+                                    Różnica wydłużeń jest następstwem różnego położenia osi obojętnych podłużnie i dźwigarów głównych i jest najbardziej odczuwalna w przypadku jazdy górą lub jazdy dołem.
+                                    W przypadku jezdni pośredniej różnice wydłużeń są małe, a w szczególnym przypadku, gdy oś obojętna podłużnie znajduje się na tym samym poziomie co oś obojętna dźwigarów, różnice te w ogóle nie występują.
+                                </p>
+                                <p>
+                                    Występujące różnice wydłużeń podłużnie powodują poziome zginanie poprzecznic, które jest tym większe, im dalej poprzecznica usytuowana jest od środka przęsła.
+                                    Poprzecznica środkowa nie jest zginana (w kierunku poziomym), a największym wygięciom podlegają poprzecznice podporowe.
+                                    Wygięcie poprzecznie powoduje występowanie w nich dodatkowych naprężeń. Również w podłużnicach występują dodatkowe naprężenia (największe w podłużnicach środkowych).
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w4_5.JPG" alt="">
+                                    <figcaption>Zginanie poprzecznic w moście z jezdnią dolną</figcaption>
+                                </figure>
+                                <p>
+                                    Aby zmniejszyć omwaiany wpływ stosuje się pewne zabiegi:
+                                    <ul>
+                                        <li>
+                                            przymocowanie poprzecznie (a tym samym jezdni) do dźwigarów głównych w ich osi obojętnej (jazda pośrednia, wyeliminowanie zginania),
+                                        </li>
+                                        <li>
+                                            przecięcie podłużnie nad poprzecznicą środkową — zmniejszenie odcinków dźwigarów głównych, z których sumują się odkształcenia działające na poprzecznice.
+                                            Zwykle daje się wtedy mocne usztywnienia w kierunku poziomym poprzecznie środkowych każdego z odcinków.
+                                            <figure>
+                                                <img src="../static/img/w4_6.JPG" alt="">
+                                            </figure>
+                                            Usztywnienia te pełnią jednocześnie rolę tężników hamownych.
+                                        </li>
+                                        <li>
+                                            odpowiedni sposób montażu polegający na tym, że podłużnice przy składaniu konstrukcji są mocowane na stałe tylko jednym końcem, drugi koniec mocowany jest dopiero po zdjęciu konstrukcji z rusztowania.
+                                            Eliminuje to wpływ ciężaru własnego konstrukcji na zginanie poziome poprzecznie.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div id='article-1-2'>
+                                <span class="under">Stężenia poprzeczne</span>
+                                <p>
+                                    Stężenia poprzeczne przenoszą parcia wiatru oraz zapewniają współpracę dźwigarów głównych, a więc wyrównywać ich przeciążenie przy niesymetrycznym obciążeniu.
+                                    Usytuowane w płaszczyźnie poziomej w miejscach połączeń z poprzecznicami.
+                                    Stosujemy stężenia kratowe lub pełnościenne.
+                                    Ogólnie poprawiają sztywność poprzeczną.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <figure>
+                                            <img class="center-jpg" style="height:150px;" src="../static/img/w4_7.JPG" alt="">
+                                            <figcaption>Stężenia poprzeczne pelnościenne</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure>
+                                            <img class="center-jpg" style="height:150px;" src="../static/img/w4_8.JPG" alt="">
+                                            <figcaption>Stężenia poprzeczne kratowe</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <br>
+                                <p>
+                                    Skrajne stężenia poprzeczne nazywa się ramami podporowymi.
+                                    Poza usztywnieniem końcowych płaszczyzn mostu mają one za zadanie przeniesienie oddziaływania górnego układu wiatrownicowego na łożyska.
+                                    W mostach z jezdnią górną ramy podporowe nie różnią się kształtem od stężeń pośrednich, a tylko są bardziej sztywne (przenoszą większe obciążenia)
+                                </p>
+                                <figure>
+                                    <img src="../static/img/w4_9.JPG" alt="">
+                                    <figcaption>Stężenie skrajne — tzw. rama podporowa</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="../static/img/w4_10.JPG" alt="">
+                                    <figcaption>Schematy podporowych stężeń poprzecznych</figcaption>
+                                </figure>
+
+                                <div id='article-1-2-1'>
+                                    <p ><u>Stężenia międzypodłużnicowe - tężnik przeciwwahaniowy</u></p>
+                                    <p>występuja w kolejowych pomostach otwartych, ich zadaniem jest usztywnienie pary podłużnic i przeniesienie sił uderzeń bocznych taboru o szyny na poprzecznice </p>
+                                    <figure>
+                                        <img src="../static/img/w4_11.JPG" alt="">
+                                        <figcaption>Stężenie podłużnic</figcaption>
+                                    </figure>
+                                    <p>
+                                        Podłużnice, szczególnie w mostach kolejowych, przenosząc duże obciążenia ruchome, mają dużą sztywność w płaszczyźnie pionowej, natomiast stosunkowo małą w płaszczyźnie poziomej.
+                                        Tymczasem jeżeli pomost jest otwarty, to uderzenia boczne taboru równe 5% nacisków pionowych wywołane wężykowym ruchem zestawu kolejowego przejmą podłuźnice.
+                                        Podłużnice należałoby więc sprawdzać na dwukierunkowe zginanie i skręcanie wywołane mimośrodowym przyłożeniem sił poziomych prostopadłych do osi mostu,
+                                        a w przypadku przekroczenia naprężeń dopuszczalnych przekrój podłużnicy należałoby rozbudować w płaszczyźnie poziomej.
+                                        Częściej zamiast zwiększenia przekroju podłużnicy przyjmuje się tzw. tężnik przeciwwahaniowy.
+                                        Ma on kształt poziomej kraty której pasami są górne pasy podłużnie.
+                                        Krzyżulce wykonuje się z kątowników łączonych do górnych pasów podłużnic.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="#" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

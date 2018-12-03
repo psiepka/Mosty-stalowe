@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link active" href="#article-1">Systemy statyczne</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1 active" href="#article-1-1">Mosty belkowe pełnościenne</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-2">Mosty belkowe kratownicowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-3">Mosty ramowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-4">Mosty łukowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-5">Mosty wiszące</a>
+                        <a class="nav-link ml-3 my-1" href="#article-1-6">Mosty podwieszone (wantowe)</a>
+                    </nav>
+                    <a class="nav-link" href="#article-2">Wybór schematu statycznego </a>
+                    <a class="nav-link" href="#article-3">Wybór tworzywa </a>
+                    <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-3 my-1" href="#article-3-1">Zalety mostów stalowych</a>
+                            <a class="nav-link ml-3 my-1" href="#article-3-2">Wady mostów stalowych</a>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                    <article>
+                    <span id="article-1"> Systemy statyczne. </span>
+                    <p>- określają ogólny sposób pracy ustroju nośnego budowli</p>
+                    <div id="article-1-1">
+                        <span class="under">Mosty belkowe pełnościenne</span>
+                        <p>
+                            - stosowane do pokonywania małych, średnich i większych rozpiętości, najprostsze do wykonania jak i analizowania, mogą występować jako:
+                            <ol type="a">
+                                <li>swobodnie podparte jednoprzęsłowe</li>
+                                <div class='opis'>
+                                    <p><u>Dotyczy dźwigarów jednoprzęsłowych</u></p>
+                                    Mniej ekonomiczne od ustrojów ciągłych - większa wysokośc w proporcji do rozpiętości, większy cieżar, większe zużycie stali.
+                                    Mimo to chętnie stosowane, ze względu na łatwość montażu i czytelność pracy. Obecnie stosuje się rozwiązania dźwigarów o pasach równoległych,
+                                    w mostach starszych kolejowych stosowano o zmiennej wysokości (w środku rozpiętości wysokość belki większa niż na skrajach belki),
+                                    aby zmniejszyć wrażliwość na drgania oraz bardziej dopasować do obwiedni momentów zginających.
+                                </div>
+                                <li>zespół przęseł swobodnie podpartych w moście wieloprzęsłowym</li>
+                                <li>wieloprzęsłowe — ciągle o stałej wysokości</li>
+                                <div class='opis'>
+                                    <p><u>Dotyczy dźwigarów ciągłych</u></p>
+                                    Najczęście stosowane trójprzęsłowe z dłuższym przęsłem środkowym ~20%, aby wyrównać ekstremalny moment przęsłowy.
+                                    Dźwigary ciągłe są wrażliwe na nierównomierne osiadanie podpór oraz oddziałowywanie temperatury
+                                </div>
+                                <li>wieloprzęsłowe — ciągle o zmiennej wysokości</li>
+                                <li>wieloprzęsłowe - przegubowe</li>
+                                <div class='opis'>
+                                    <p><u>Dotyczy dźwigarów przegubowych</u></p>
+                                    Nazywane gerberowskimi posiadają zalety dźwigarów ciągłych, są niewrażliwe na osiadanie podpór.
+                                    Obecnie niestosowane z powodów:
+                                    <ul>
+                                        <li>występowania znacznych ugięć w miejscu przegubu, gdzie zwiększone jest oddziaływanie dynamiczne</li>
+                                        <li>wykonawczych, trudności ze skonstruowaniem wiatrownic w miejscu przegubu oraz utrzymanie przegubów w stanie gwarantującym poprawną pracę statyczną</li>
+                                    </ul>
+                                </div>
+                            </ol>
+                            <figure>
+                                <img src="../static/img/w2_1.jpg" alt="">
+                                <figcaption>Schematy statyczne mostów belkowych pełnościnnych.</figcaption>
+                            </figure>
+                        </p>
+                        <p>
+                            Wprowadzenie do belek ciągłych zmiennej wysokości (rys.d) utrudnia nieco wykonanie belek, ale wprowadza na ogół korzystne zmiany w przebiegu momentów
+                                — prowadzi do zwiększenia momentów podporowych i zmniejszenia momentów przęsłowych.
+                                Statyczną niewyznaczalność belki ciągłej można usunąć przez wprowadzenie do belki-wielo- przęsłowej odpowiedniej liczby przegubów.
+                        </p>
+                    </div>
+                    <div id="article-1-2">
+                        <span class="under">Mosty belkowe kratownicowe</span>
+                        <p>
+                            - stosuje się przy średnich i większych rozpiętościach.
+                        </p>
+                        <p>
+                            Występują:
+                            <ul>
+                                <li>z jazdą górą</li>
+                                <li>z jazdą pośrednią</li>
+                                <li>z jazdą dołem</li>
+                                <li style="list-style-type: circle">jednoprzęsłowe</li>
+                                <li style="list-style-type: circle">wieloprzęsłowe</li>
+                                <li style="list-style-type: square">o pasach równoległych</li>
+                                <li style="list-style-type: square">o pasach krzywoliniowych</li>
+                            </ul>
+                            <figure>
+                                <img src="../static/img/w2_2.jpg" alt="">
+                                <figcaption>Schematy statyczne mostów kratowowych</figcaption>
+                            </figure>
+                        </p>
+                        <p>W kontekscie dynamiki, korzystniejsza jazda dołem, jazda górą jest podatniejsza na drgania.</p>
+                        <p>Projektując przyjmujemy wezły jako przeguby, w rzeczywistości bliżej im do ramownic.</p>
+                    </div>
+                    <div id="article-1-3">
+                        <span class="under">Mosty ramowe</span>
+                        <p>
+                            stosuje się do pokonywania średnich rozpiętości, szczególnie w wiaduktach, gdzie mamy ograniczoną wysokość konstrukcyjną,
+                            a zastosowane fundamenty mogą przenieść siły poziome wywierane przez słupy.
+                            Przydatność ram w mostach jest ograniczona, bo ani stalowe podpory, ani ich łożyska nie powinny być zalewane.
+                            <figure>
+                                <img src="../static/img/w2_3.JPG" alt="">
+                                <figcaption>Schematy statyczny mostów ramowych</figcaption>
+                            </figure>
+                        </p>
+                    </div>
+                    <div id="article-1-4">
+                        <span class="under">Mosty łukowe</span>
+                        <p>- stosowane są do pokonywania przeszkód wymagających średnich i większych rozpiętości.</p>
+                        <p> Występują :</p>
+                        <ul>
+                            <li>z jezdnią górą</li>
+                            <li>z jezdnią pośrednią</li>
+                            <li>z jezdnia dołem</li>
+                            <li style="list-style-type: circle">bezprzegubowe- utwierdzone</li>
+                            <li style="list-style-type: circle">dwuprzegubowe</li>
+                            <li style="list-style-type: circle">trójprzegubowe</li>
+                        </ul>
+                        <p>Dwa rozwiązania ustroju nośnego:</p>
+                        <ul>
+                            <li>ustrojem nośnym jest łuk, a na nim za pośrednictwem słupów oparty, lub za pośrednictwem wieszaków podwieszony, jest pomost z jezdnią (most łukowy klasyczny)</li>
+                            <li>ustrojem nośnym jest belka wzmocniona wiotkim lukiem (most belkowy wzmocniony łukiem)</li>
+                        </ul>
+                        <figure>
+                            <img src="../static/img/w2_4.jpg" alt="">
+                            <figcaption>Schematy statyczne mostów łukowych</figcaption>
+                        </figure>
+                    </div>
+                    <div id='article-1-5'>
+                        <span class="under">Mosty wiszące</span>
+                        <p>
+                            - stosuje się przy dużych i bardzo dużych rozpiętościach. Głównymi elementami nośnymi są cięgna z pylonami, do których podwieszony jest pomost. Cięgna nośne kotwione w pomoście w przyczółkach lub niezależnie. Pomost może być wiotki lub sztywny.
+                            Siły poziome od cięgien są przenoszone na przyczółki, gdzie cięgna są zakotwione. Istnieje również inne rozwiązanie: cięgno zakotwione zostaje w końcowych częściach belki.
+                                Daje to dużą siłę osiową ściskającą belkę, równą poziomej składowej naciągu cięgna. Mówi się wtedy, że jest to „most w sobie zakotwiony”. Pomost w moście wiszącym jest belką usztywniającą. Może
+                            ona być blachownicą lub kratą. Belki usztywniające muszą być końcami zakotwione w kierunku pionowym, aby nie dochodziło do odrywania od skrajnych podpór. Klasyczne wyróżniają się krzywoliniowym kszatałtem cięgien.
+                        </p>
+                        <figure>
+                            <img src="../static/img/w2_5.jpg" alt="">
+                            <figcaption>Schematy statyczne mostów wiszących</figcaption>
+                        </figure>
+                    </div>
+                    <div id="article-1-6">
+                        <span class="under">Mosty podwieszone (wantowe)</span>
+                        <p>
+                            - stosuje się przy dużych i bardzo dużych. Cięgna nośne (wanty) łączą bezpośrednio pylon z pomostem, mają cięgna prostolinowe. Pomost przenosi momenty zginające i siły podłużne.
+                        </p>
+                        <figure>
+                            <img src="../static/img/w2_6.jpg" alt="">
+                            <figcaption>Schematy statyczme mostów podwieszanych (wantowych)</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article>
+                    <span id="article-2">Wybór schematu statycznego</span>
+                    <p>
+                        Przystępując do projektowania mostu w pierwszej kolejności ustala się dane wyjściowe obejmujące wymsgania komunikacyjne (niweleta mostu, skrajnia na moście,
+                        szerokość mostu), gospodarcze (zagospodarowanie przestrzeni pod mostem) oraz poddaje analizie
+                        istniejące warunki hydrogeologiczne (profil dna rzeki i przekrój geologiczny pod mostem, poziom wód, prędkość, objętość przepływu) i ustala się światło mostu, głębokość rozmycia.
+                    </p>
+                    <br>
+                    <p>Wybór systemu statycznego wiąże sie z <u>podziałem przeprawy na przęsła</u></p>
+                    <p>Dla określonego systemu statycznego mostu koszt budowy będzie zależał od przyjętego podziału na przęsła (rozpiętości przęseł). Można wykazać, że ekonomiczną rozpiętością przęsła będzie taka rozpiętość, przy której koszt budowy jednego przęsła (dźwigarów ze stężeniami) będzie równy średniej arytmetycznej z kosztu obu sąsiednich podpór.</p>
+                </article>
+
+                <article>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class='col-xs-12'>
+                            <span id="article-3">Wybór tworzywa</span>
+                            <p>
+                                Przy wstępych racach nad projektem mostu konieczne jest dokonanie wyboru tworzywa z jakiego most zostanie zbudowany ( - pomost, ponieważ podpory praktycznie zawsze są betonowe ). Obecnie przy budowach mostów dokonujemy wyboru między dwoma materiałami - betonem a stalą.
+                                W tym celu należy porównać zalety i wady każdego z materiału i podjąć obiektywną decyzje, który w tym przypadku będzie lepszy.
+                            </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="under" id="article-3-1">Zalety mostów stalowych:</span>
+                                <ul>
+                                    <li>większa odkształcalność</li>
+                                    <li>lepsza proporcja wytrzymałości do ciężaru</li>
+                                    <li>lżejsza konstrukcja przęsła</li>
+                                    <li>większe możliwości prefabrykacji konstrukcji</li>
+                                    <li>łatwiejsze wzmocnienie, przebudowa, <br> przeniesienie w inne miejsce</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-6" >
+                                <span class="under" id="article-3-2">Wady mostów stalowych:</span>
+                                <ul>
+                                    <li>brak monolityczności</li>
+                                    <li>konieczność skropulatnej konserwacji</li>
+                                    <li>większa wrażliwość na obciążenie  <br> o charakterze dynamicznym</li>
+                                    <li>mniejsza trwałość</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="#" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+            </section>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

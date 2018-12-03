@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="grid">
+    <div id="quiz">
+        <h1>Quiz</h1>
+        <hr style="margin-bottom: 20px">
+
+        <p id="question"></p>
+
+        <div class="buttons">
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="btn0" class='btn btn-outline-dark'><span id="choice0"></span></button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btn1"  class='btn btn-outline-dark'><span id="choice1"></span></button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btn2"  class='btn btn-outline-dark'><span id="choice2"></span></button>
+                </div>
+                <div class="col-md-6">
+                    <button id="btn3"  class='btn btn-outline-dark'><span id="choice3"></span></button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <hr style="margin-top: 25px">
+
+    <footer>
+        <p id="progress"></p>
+    </footer>
+    <script src="{{url_for('static', filename='quiz_controller.js') }}"> </script>
+    <script src="{{url_for('static', filename='question.js') }}"> </script>
+    <script src="{{url_for('static', filename='app.js') }}"> </script>
+</div>
+
+
+{% endblock %}
