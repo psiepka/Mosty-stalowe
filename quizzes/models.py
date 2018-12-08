@@ -70,17 +70,13 @@ class QuestionQuiz(models.Model):
         Returns:
             list -- contain answers that user will see on quiz, max lenght of list-4, min-len( all answers belong to question)
         """
-
-
-        list_answers = []
-        for a in self.answers.all():
-            list_answers.append(a)
+        list_answers = [a.text for a in self.answers.all()]
         random.shuffle(list_answers)
         if len(list_answers) > 4:
-            answsers = []
+            answers = []
             for i in range(4):
-                answsers.append(list_answers.pop())
-            return answsers
+                answers.append(list_answers.pop())
+            return answers
         else:
             return list_answers
 
@@ -97,10 +93,10 @@ class QuestionQuiz(models.Model):
         correct = 0
         ans = 0
         for q in quiz_answers:
-            if q.correct:
+            if self.answers.get(text=q).correct:
                 ans += 1
-        for a in user_answers:
-            if a.correct:
+        for q in user_answers:
+            if self.answers.get(text=q).correct:
                 correct += 1
             else:
                 correct -= 1

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="fullscreenDiv">
+
+    <div class="fsdcenter">
+        <h1>Gratuluje uzyskałeś/aś <b>{{ result }} % z quizu </b>. </h1>
+        <br><br><br>
+        <div class='row'>
+            <div class='col-6'>
+                <a class="btn btn-primary" href="{% url 'home' %}">Powrót na strone główną</a>
+            </div>
+            <div class='col-6'>
+                <a class="btn btn-primary" href="{% url 'quiz_start' lecture=lecture %}">Zacznij quiz od nowa</a>
+            </div>
+        </div>
+        <hr>
+        <div>
+            {{d}}
+        </div>
+    </div>
+</div>
+{% endblock %}

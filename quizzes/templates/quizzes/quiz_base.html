@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="grid">
+        <h1>Quiz</h1>
+
+        <h5>
+            {{ quiz.question_text }}
+        </h5>
+        <div class="mt-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table class="table table-hover table-bordered">
+                    <tbody>
+                    {% for a in ans %}
+                        <tr>
+                            <td class='p-0'>
+                                <label class="form-check-label m-1 p-2" style="width:100%; height:100%">
+                                    <input type="checkbox" name='{{ quiz.id }}' value="{{a}}">
+                                    {{a}}
+                                </label>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name='submit' value="Sprawdź">
+            </form>
+        </div>
+
+
+
+    <footer>
+        <p id="progress">Zadanie {{ progress_current }} z {{ progress_all }}.</p>
+    </footer>
+
+    <hr style="margin-top: 25px">
+    {% if prev_q %}
+
+        <small>Poprzednie pytanie:</small>
+        <p class="ml-4">
+            <b>{{prev_q.question_text}}</b>
+        </p>
+
+        <small>Poprawne odpowiedzi</small>
+        <!-- <ul>
+            {% for q in correct_list %}
+            <li>
+                {{ q }}
+            </li>
+            {% endfor %}
+        </ul> -->
+
+        {% if result %}
+            <p class="ans-correct">Brawo odpowiedziałeś poprawnie.</p>
+        {% else %}
+            <p class="ans-incorrect">Niestety odpowiedziałeś fatalnie.</p>
+        {% endif %}
+
+        <p class="under">Wytłumaczenie :</p>
+
+        <div class='exp'>
+            <p> {{ prev_q.explanation }}</p>
+        </div>
+{% endif %}
+</div>
+
+<h1><b>{{index}}</b></h1>
+<h1> {{l}} </h1>
+<h1>
+    {{request.session.items}}
+</h1>
+
+{% endblock %}

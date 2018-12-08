@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-from .models import Quiz
+from django.shortcuts import render, redirect, get_list_or_404
+from .models import Quiz, QuestionQuiz
+from random import shuffle
 # Create your views here.
 
 w2_q1 = Quiz('W których mostach występuje siła rozporowa?',['ramowym', 'łukowym', 'wiszącym', 'belkowym - gerberowskim'], ['ramowym','łukowym',])
@@ -31,7 +32,7 @@ def quiz_2(request):
             if data[i] == True:
                 result += 1
         result = round((result/len(quiz))*100)
-        return render(request, 'quizzes/result.html', {'wynik':result, 'data':data})
+        return render(request, 'quizzes/result.html', {'wynik':request.POST.getlist(str(i)), 'data':data})
     return render(request, 'quizzes/quiz_2.html', context=context)
 
 
@@ -47,3 +48,90 @@ w3_q8 = Quiz("Czym w kontekście połaczeń elementów konstrukcji nazywamy 'wst
 w3_q9 = Quiz('Który z elementów powinin być najgrubszy, w pomoście ortotropowym?',['blacha ortotoropowa','pas dolny podłużnicy','pas dolny poprzecznicy','żebro podłuzne'],['blacha ortotoropowa'])
 w3_q10 = Quiz('Zaznacz zdania prawdziwe',['pomost zespolony jest pomostem zamkniętym', 'mostownice są stosowane wyłącznie na obiektach mostowych', 'pomost otwarty składa się z belek pomostu oraz płyty pomostowej','mostownice mogą być drewniane oraz stalowe'],['pomost zespolony jest pomostem zamkniętym','mostownice mogą być drewniane oraz stalowe'])
 wyklad3_quiz = [w3_q1, w3_q2, w3_q3, w3_q4, w3_q5, w3_q6, w3_q7, w3_q8, w3_q9, w3_q10]
+
+
+def quiz_start(request, lecture):
+    """
+    This page load quiz questions and other informations which are needed to start quiz of specific lecture.
+    All data is store in request.session.
+    I program this in that way, that quest can use quizzes and see thier result without registration and login.
+    Arguments:
+        lecture {int} -- this iteger describe quiz lecture from questions will be base on.
+    Returns:
+        Page with all quiz of lecture, which we store in database.
+    """
+    quizes = get_list_or_404(QuestionQuiz, lecture=lecture)
+    dict_quizes = {lecture : { q.id : { a : None for a in q.throw_answers() } for q in quizes}}
+    shuffle(dict_quizes)
+    request.session.flush()
+    request.session['quizzes'] = dict_quizes
+    request.session['progress'] = {
+        lecture : {
+            'lenght' : len(request.session['quizzes'][lecture]),
+            'remained' : [q.id for q in quizes]
+            }
+    }
+    request.session.set_expiry(0)
+    return redirect('quiz_base', lecture=lecture)
+
+
+def quiz_base(request, lecture):
+    lec = str(lecture)
+    if not request.session['quizzes'][lec]:
+        return redirect('quiz_start',lecture=lecture)
+    quiz = QuestionQuiz.objects.get(id=request.session['progress'][lec]['remained'][0])
+    quiz_ans = [ q for q in request.session['quizzes'][lec][str(request.session['progress'][lec]['remained'][0])] ]
+    progress_current = (request.session['progress'][lec]['lenght'] - len(request.session['progress'][lec]['remained'])) + 1
+    progress_all = request.session['progress'][lec]['lenght']
+    content = {
+        'progress_current': progress_current,
+        'progress_all' : progress_all,
+        'quiz' : quiz,
+        'ans': quiz_ans,
+        'title' : 'Quiz',
+    }
+    if request.method == "POST":
+        prev_q = quiz
+        prev_ans = quiz_ans
+        request.session['quizzes'][str(prev_q.lecture)][str(quiz.id)].update(
+            {
+                a : True for a in prev_ans if prev_q.answers.get(text=a).correct
+                }
+        )
+        request.session['quizzes'][str(prev_q.lecture)][str(quiz.id)].update(
+            { 'outcome': {
+                'text' : quiz.question_text,
+                'exp' : quiz.explanation,
+                'score' : quiz.check_answer(prev_ans, request.POST.getlist(str(quiz.id))),
+                'send' : request.POST.getlist(str(quiz.id)),
+                'ans' : prev_ans
+            }}
+        )
+        result = quiz.check_answer(prev_ans, request.POST.getlist(str(quiz.id)))
+        del request.session['progress'][lec]['remained'][0]
+        if not request.session['progress'][lec]['remained']:
+            if request.session['quizzes'][lec]:
+                q_all = 0
+                q_correct = 0
+                for key, val in request.session['quizzes'][str(quiz.lecture)].items():
+                    q_all += 1
+                    if val['score']:
+                        q_correct += 1
+                result = int((q_correct/q_all)*100)
+                return render(request, 'quizzes/result_quiz.html', {'result': result, 'lecture' : int(lecture) })
+            else:
+                return redirect('quiz_start', lecture=lecture)
+        quiz = QuestionQuiz.objects.get(id=request.session['progress'][lec]['remained'][0])
+        quiz_ans = [ q for q in request.session['quizzes'][lec][str(request.session['progress'][lec]['remained'][0])] ]
+        progress_current = (request.session['progress'][lec]['lenght'] - len(request.session['progress'][lec]['remained'])) + 1
+        content = {
+            'progress_current': progress_current,
+            'progress_all' : progress_all,
+            'result' : result,
+            'prev_q' : prev_q,
+            'quiz' : quiz,
+            'ans': quiz_ans,
+            'title' : 'Quiz'
+            }
+        return render(request, 'quizzes/quiz_base.html', context=content)
+    return render(request, 'quizzes/quiz_base.html', context=content)
