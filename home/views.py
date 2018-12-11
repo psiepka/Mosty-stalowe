@@ -11,3 +11,10 @@ def error_500(request):
 
 def home(request):
     return render(request, 'home/home.html', {'title':'Strona główna'})
+
+
+def contact(request):
+    return render(request, 'home/contact.html', {'title':'Kontakt'})
+
+def biblography(request):
+    return render(request, 'home/biblography.html', {'title':'Biblografia'})

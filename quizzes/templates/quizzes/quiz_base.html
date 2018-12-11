@@ -7,9 +7,9 @@
 
 
 
-<div class="grid">
+<div class="grid mt-4">
         <h1>Quiz</h1>
-
+        <p id='quiz-podpowiedz'>Wybierz wszystkie poprawne odpowiedzi (możliwy wybór 0-4 odpowiedzi)</p>
         <h5>
             {{ quiz.question_text }}
         </h5>
@@ -40,7 +40,7 @@
     <footer>
         <p id="progress">Zadanie {{ progress_current }} z {{ progress_all }}.</p>
     </footer>
-
+<!-- 
     <hr style="margin-top: 25px">
     {% if prev_q %}
 
@@ -50,13 +50,6 @@
         </p>
 
         <small>Poprawne odpowiedzi</small>
-        <!-- <ul>
-            {% for q in correct_list %}
-            <li>
-                {{ q }}
-            </li>
-            {% endfor %}
-        </ul> -->
 
         {% if result %}
             <p class="ans-correct">Brawo odpowiedziałeś poprawnie.</p>
@@ -69,13 +62,9 @@
         <div class='exp'>
             <p> {{ prev_q.explanation }}</p>
         </div>
-{% endif %}
+{% endif %} -->
 </div>
 
-<h1><b>{{index}}</b></h1>
-<h1> {{l}} </h1>
-<h1>
-    {{request.session.items}}
-</h1>
+
 
 {% endblock %}

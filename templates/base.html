@@ -47,17 +47,20 @@
               Quizy
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
-              <a class="dropdown-item" href="#">Quiz 1</a>
-              <a class="dropdown-item" href="#">Quiz 2</a>
+              <a class="dropdown-item" href="{% url 'quiz_start' lecture=1 %}">Quiz 1</a>
+              <a class="dropdown-item" href="{% url 'quiz_start' lecture=2 %}">Quiz 2</a>
+              <a class="dropdown-item" href="{% url 'quiz_start' lecture=3 %}">Quiz 3</a>
+              <a class="dropdown-item" href="{% url 'quiz_start' lecture=4 %}">Quiz 4</a>
+              <a class="dropdown-item" href="{% url 'quiz_start' lecture=5 %}">Quiz 5</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Wyniki</a>
+              <a class="dropdown-item disabled" href="#">Wyniki</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Bibliografia</a>
+            <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Kontakt</a>
+            <a class="nav-link" href="{% url 'bibliography' %}">Bibliografia</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ">
@@ -69,22 +72,15 @@
 
     <br>
 
-
     <div class="container">
         <div class="row">
             <div class="col-md-11">
               {% block content %}{% endblock %}
             </div>
             <div class="col-md-1">
-              <aside>
-                  Godzina:
-                  </div>
-              </aside>
             </div>
         </div>
     </div>
-
-
 
   </body>
 </html>

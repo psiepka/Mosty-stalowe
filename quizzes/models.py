@@ -63,7 +63,7 @@ class QuestionQuiz(models.Model):
     explanation = models.TextField('Wytłumaczenie')
 
     def __str__(self):
-        return f"\nQuiz of {self.lecture} lecture, of id {self.id} : '{self.question_text}'\n"
+        return f"Odnośnie {self.lecture} wykładu,\n{self.question_text}"
 
     def throw_answers(self):
         """
@@ -119,3 +119,6 @@ class AnswerQuiz(models.Model):
         )
     text = models.TextField('Treść')
     correct = models.BooleanField('Zgodność')
+
+    def __str__(self):
+        return f'Odnośnie {self.question.lecture} pytania {self.question.question_text} \n{self.text}'

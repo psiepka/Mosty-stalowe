@@ -4,7 +4,7 @@ from random import shuffle
 # Create your views here.
 
 w2_q1 = Quiz('W których mostach występuje siła rozporowa?',['ramowym', 'łukowym', 'wiszącym', 'belkowym - gerberowskim'], ['ramowym','łukowym',])
-w2_q2 = Quiz('Wprowadzenie zmiennej wysokości belek ciągłych w mostach powoduje :',['zwiększenia momentów podporowych','zminiejszenie momentów podporowych', 'zmniejszenia momentów przęsłowych','zwiększenie momentów przęsłowych'],['zmniejszenia momentów przęsłowych','zwiększenia momentów podporowych'])
+w2_q2 = Quiz('Wprowadzenie zmiennej wysokości belek ciągłych w mostach powoduje:',['zwiększenia momentów podporowych','zminiejszenie momentów podporowych', 'zmniejszenia momentów przęsłowych','zwiększenie momentów przęsłowych'],['zmniejszenia momentów przęsłowych','zwiększenia momentów podporowych'])
 w2_q3 = Quiz('Które z systemów statycznych powinno stosować się przy dużych i bardzo dużych rozpiętościach?',['belkowy', 'kratowy', 'wiszący', 'wantowy'],['wiszący', 'wantowy'])
 w2_q4 = Quiz('Które czynniki określają wymagania gospodarcze?', ['tworzywo z którego wykonamy obiekt', 'skrajnie mostu','wykorzystanie terenu pod mostem', 'przekrój geologiczny pod mostem'],['wykorzystanie terenu pod mostem'])
 w2_q5 = Quiz('Które zdania odpowiadają mostom podwieszanym?',['pomost przenosi momenty zginające i siły podłużne', 'siły poziome przenoszone są na przyczółki','pomost może być blachownicą lub kratą', 'krzywoliniowy kształt ciegien'], ['pomost przenosi momenty zginające i siły podłużne', 'pomost może być blachownicą lub kratą'])
@@ -36,7 +36,7 @@ def quiz_2(request):
     return render(request, 'quizzes/quiz_2.html', context=context)
 
 
-w3_q1 = Quiz('Wszystkie stalowe pomosty muszą składać się z :', ['podłużnicy', 'dźwigarów głównych', 'poprzecznic', 'płyty pomostowej'],['dźwigarów głównych'])
+w3_q1 = Quiz('Wszystkie stalowe pomosty muszą składać się z:', ['podłużnicy', 'dźwigarów głównych', 'poprzecznic', 'płyty pomostowej'],['dźwigarów głównych'])
 w3_q2 = Quiz('Zaznacz prawidłowe zdania odnośnie pracy statycznej mostów',['płyta pomostu przekazuje obciążenia z belek pomostowych na dźwigary główne','płyta pomostu przekazuje obciążenia z belek pomostowych na dźwigary główne oraz współpracuje z nimi','niewspółpracująca płyta pomostowa z dźwigarmai głównymi tworzy przestrzenny układ statytczny'],[])
 w3_q3 = Quiz('Zaznacz prawidłowe zdania odnośnie poprzecznicy',['poprawiają współpracę między dźwigarami głównymi','w pomoście współpracującym, nie muszą występować', 'w przypadku pomostu z blach nieckowych nie muszą występować', 'w przypadku pomostu z blach ortotropowym nie muszą występować'],['poprawiają współpracę między dźwigarami głównymi','w pomoście współpracującym, nie muszą występować'])
 w3_q4 = Quiz('Zaznacz prawidłowe zdania odnośnie poprzecznicy',['poprawiają współpracę między dźwigarami głównymi','w pomoście współpracującym, nie muszą występować', 'w przypadku pomostu z blach nieckowych nie muszą występować', 'w przypadku pomostu z blach ortotropowym nie muszą występować'],['w pomoście współpracującym, nie muszą występować','w przypadku pomostu z blach ortotropowym nie muszą występować'])
@@ -61,7 +61,7 @@ def quiz_start(request, lecture):
         Page with all quiz of lecture, which we store in database.
     """
     quizes = get_list_or_404(QuestionQuiz, lecture=lecture)
-    dict_quizes = {lecture : { q.id : { a : None for a in q.throw_answers() } for q in quizes}}
+    dict_quizes = {lecture : { q.id : { a : False for a in q.throw_answers() } for q in quizes}}
     shuffle(dict_quizes)
     request.session.flush()
     request.session['quizzes'] = dict_quizes
@@ -72,15 +72,19 @@ def quiz_start(request, lecture):
             }
     }
     request.session.set_expiry(0)
-    return redirect('quiz_base', lecture=lecture)
+    shuffle(request.session['progress'][lecture]['remained'])
+    question = request.session['progress'][lecture]['remained'][0]
+    return redirect('quiz_base', lecture=lecture, question=question)
 
 
-def quiz_base(request, lecture):
+def quiz_base(request, lecture, question):
     lec = str(lecture)
-    if not request.session['quizzes'][lec]:
-        return redirect('quiz_start',lecture=lecture)
-    quiz = QuestionQuiz.objects.get(id=request.session['progress'][lec]['remained'][0])
-    quiz_ans = [ q for q in request.session['quizzes'][lec][str(request.session['progress'][lec]['remained'][0])] ]
+    base_quiz = request.session['quizzes'][lec]
+    if not base_quiz:
+        return redirect('quiz_start', lecture=lecture)
+    quiz = QuestionQuiz.objects.get(id=question)
+    questions_quiz = request.session['quizzes'][lec][str(question)]
+    quiz_ans = [ q for q in questions_quiz ]
     progress_current = (request.session['progress'][lec]['lenght'] - len(request.session['progress'][lec]['remained'])) + 1
     progress_all = request.session['progress'][lec]['lenght']
     content = {
@@ -91,47 +95,45 @@ def quiz_base(request, lecture):
         'title' : 'Quiz',
     }
     if request.method == "POST":
-        prev_q = quiz
-        prev_ans = quiz_ans
-        request.session['quizzes'][str(prev_q.lecture)][str(quiz.id)].update(
+        request.session['quizzes'][str(quiz.lecture)][str(quiz.id)].update(
             {
-                a : True for a in prev_ans if prev_q.answers.get(text=a).correct
+                a : True for a in quiz_ans if quiz.answers.get(text=a).correct
                 }
         )
-        request.session['quizzes'][str(prev_q.lecture)][str(quiz.id)].update(
+        prev_ans = { q : b for q, b in request.session['quizzes'][str(quiz.lecture)][str(quiz.id)].items()}
+        request.session['quizzes'][str(quiz.lecture)][str(quiz.id)].update(
             { 'outcome': {
                 'text' : quiz.question_text,
                 'exp' : quiz.explanation,
-                'score' : quiz.check_answer(prev_ans, request.POST.getlist(str(quiz.id))),
+                'score' : quiz.check_answer(quiz_ans, request.POST.getlist(str(quiz.id))),
                 'send' : request.POST.getlist(str(quiz.id)),
                 'ans' : prev_ans
             }}
         )
-        result = quiz.check_answer(prev_ans, request.POST.getlist(str(quiz.id)))
+        request.session.modified = True
         del request.session['progress'][lec]['remained'][0]
-        if not request.session['progress'][lec]['remained']:
-            if request.session['quizzes'][lec]:
-                q_all = 0
-                q_correct = 0
-                for key, val in request.session['quizzes'][str(quiz.lecture)].items():
-                    q_all += 1
-                    if val['score']:
-                        q_correct += 1
-                result = int((q_correct/q_all)*100)
-                return render(request, 'quizzes/result_quiz.html', {'result': result, 'lecture' : int(lecture) })
-            else:
-                return redirect('quiz_start', lecture=lecture)
-        quiz = QuestionQuiz.objects.get(id=request.session['progress'][lec]['remained'][0])
-        quiz_ans = [ q for q in request.session['quizzes'][lec][str(request.session['progress'][lec]['remained'][0])] ]
-        progress_current = (request.session['progress'][lec]['lenght'] - len(request.session['progress'][lec]['remained'])) + 1
-        content = {
-            'progress_current': progress_current,
-            'progress_all' : progress_all,
-            'result' : result,
-            'prev_q' : prev_q,
-            'quiz' : quiz,
-            'ans': quiz_ans,
-            'title' : 'Quiz'
-            }
-        return render(request, 'quizzes/quiz_base.html', context=content)
+        try:
+            quiz = request.session['progress'][lec]['remained'][0]
+            return redirect('quiz_base', lecture=int(lec), question=int(quiz))
+        except IndexError:
+            return redirect('quiz_result', lecture=lec)
     return render(request, 'quizzes/quiz_base.html', context=content)
+
+
+def quiz_result(request, lecture):
+    if not request.session['quizzes'][str(lecture)]:
+        return redirect('quiz_start', lecture=lecture)
+    q_all = 0
+    q_correct = 0
+    quizzes = request.session['quizzes'][str(lecture)].items()
+    for key, val in quizzes:
+        q_all += 1
+        if val['outcome']['score']:
+            q_correct += 1
+    result = int((q_correct/q_all)*100)
+    context = {
+        'lecture' : int(lecture),
+        'result': result,
+        'quiz': quizzes,
+    }
+    return render(request, 'quizzes/result_quiz.html', context=context)

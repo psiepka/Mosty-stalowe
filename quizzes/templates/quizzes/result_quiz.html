@@ -1,23 +1,72 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="fullscreenDiv">
+<div class="grid mt-4">
+    <br>
+    <h1>Gratuluje ukończyłeś quiz</h1>
+    <h3 style="text-align:center">z wynikiem -  <b>{{result}} %</b> !</h3>
+    <br><br><br>
+    <div class='row'>
+        <div class='col-4'>
+            <a class="btn btn-primary m-1" href="{% url 'home' %}">Powrót na strone główną</a>
+        </div>
+        <div class='col-4 offset-4'>
+            <a class="btn btn-primary m-1" href="{% url 'quiz_start' lecture=lecture %}">Zacznij quiz od nowa</a>
+        </div>
+    </div>
+    <hr>
+    <p class="under">
+        ODPOWIEDZI:
+    </p>
+    <br><br>
+    <div class='result-exp'>
+        {% for key, value in quiz%}
+                <b>{{value.outcome.text}}</b>
+            <br><br>
 
-    <div class="fsdcenter">
-        <h1>Gratuluje uzyskałeś/aś <b>{{ result }} % z quizu </b>. </h1>
-        <br><br><br>
-        <div class='row'>
-            <div class='col-6'>
-                <a class="btn btn-primary" href="{% url 'home' %}">Powrót na strone główną</a>
+            {% if value.outcome.score %}
+                <p class="ans-correct">Brawo odpowiedziałeś poprawnie.</p>
+            {% else %}
+                <p class="ans-incorrect">Niestety odpowiedziałeś fatalnie.</p>
+            {% endif %}
+            <br>
+
+            <table class="table table-bordered">
+                <tbody>
+                {% for k, v in value.outcome.ans.items %}
+                    <tr>
+                        <td class='p-0'>
+                            {% if v and k in value.outcome.send %}
+                                <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
+                                <b>{{ k }}</b>
+                                </p>
+                            {% elif v and k not in value.outcome.send %}
+                                <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
+                                {{ k }}
+                                </p>
+                            {% elif not v and k in value.outcome.send %}
+                                <p class="form-check-label m-1 p-2" style="background-color: rgb(255, 195, 195)">
+                                <b>{{ k }}</b>
+                                </p>
+                            {% else %}
+                                <p class="form-check-label m-1 p-2">
+                                    {{ k }}
+                                </p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+            <small style="text-align: left"><b>Wytłumaczenie :</b></small>
+            <div class='exp'>
+                <p>{{value.outcome.exp}}</p>
             </div>
-            <div class='col-6'>
-                <a class="btn btn-primary" href="{% url 'quiz_start' lecture=lecture %}">Zacznij quiz od nowa</a>
-            </div>
-        </div>
-        <hr>
-        <div>
-            {{d}}
-        </div>
+            <br><br>
+            <hr>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

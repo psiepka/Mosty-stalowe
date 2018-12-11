@@ -42,6 +42,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # Application definition
 
+SESSION_SAVE_EVERY_REQUEST = True
+
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'articles.apps.ArticlesConfig',
