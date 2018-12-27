@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Zalety i wady</a>
+                    <a class="nav-link" href="#article-2">Systemy zakratowań</a>
+                    <a class="nav-link" href="#article-3">Systemy statyczne</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-3-1">Belka swobodnie podparta</a>
+                        <a class="nav-link ml-3 my-1" href="#article-3-2">Belka ciągła</a>
+                    </nav>
+                    <a class="nav-link" href="#article-4">Przekroje poprzeczne</a>
+                    <a class="nav-link" href="#article-5">Węzły dźwigarów kratownicowych</a>
+                    <a class="nav-link" href="#article-6">Pas sztywny</a>
+                    <a class="nav-link" href="#article-7">Analiza przęseł kratownicowych</a>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Wstęp</span>
+                            <br><br>
+                            <div class='row'>
+                                <div class='col-md-11' id='article-1-1'>
+                                    <p>
+                                        Stalowe dźwigary główne kratowe stosuje się od 1850 r.
+                                        Stosuje się dla mostów dla średnich i dużych rozpiętościach (~ 20m - 100m).
+                                        W przypadku jazdy dołem możemy osiągnąć małą wysokość konstrukcyjną.
+                                        Porównując je do mosty z dźwigarami pełnościennymi, mosty kratowe pozwalają zredukować liczbe podpór.
+                                        Są również często wybierane ze względu na estetykę, bardzo ładnie się prezentują.
+                                        Niestety konstrukcja tych mostów jest złożona, oraz utrzymanie relatywnie drogie.
+                                    </p>
+                                </div>
+                            </div>
+                            <figure>
+                                <img  src="../static/img/w6_1_1.jpg" alt="">
+                                <figcaption>Widok elementów mostu kratowego</figcaption>
+                            </figure>
+                    </article>
+                    <article>
+                        <div id="article-2" class="main-article">
+                            <span>Systemy zakratowań</span>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_1.jpg" alt="">
+                                        <figcaption>1. Dźwigar kratowy z kratą wielokrotną w kształcie litery W. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_2.jpg" alt="">
+                                        <figcaption>2. Dźwigar kratowy z kratą wielokrotną w kształcie litery N. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_3.jpg" alt="">
+                                        <figcaption>3. Dźwigar kratowy z kratą dwukrzyżulcową. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_4.jpg" alt="">
+                                        <figcaption>4. Dźwigar kratowy z kratą w kształcie litery W. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_5.jpg" alt="">
+                                        <figcaption>5. Dźwigar kratowy z kratą w kształcie litery N. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_6.jpg" alt="">
+                                        <figcaption>6. Dźwigar kratowy z kratą w kształcie litery K. </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-12">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_7.jpg" alt="">
+                                        <figcaption>7. Dźwigar kratowy w kształcie litery W z dodatkowymi wieszakami i słupkami. </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <p>
+                                Jako pierwsze zaczęto stosować dźwigary z kratą wielokrotną.
+                                Kolejnymi stosowanymi rozwiązaniami konstrukcyjnymi były dźwigary z kratą wielokrotną w kształcie litery N i z kratą dwukrzyżulcową.
+                                Wymienione typy krat wewnętrznie wysoce statycznie niewyznaczalne oraz bardzo kłopotliwe w wykonstruowaniu.
+                            </p>
+                            <p>
+                                W dźwigarach z kratą w literze N, krzyżulce są rozciągane. Projektując dąży sie do zastępowania elementów ściskanych, rozciągającymi w konstrukcji.
+                                Wówczas nie rzeba przeprowadzać kontroli stateczności oraz elementy są mniej krępe (pozytyny czynnik ekonomiczny).
+                            </p>
+                            <p>
+                                Najkorzystniejsza pod względem wykonawczym i konstrukcyjnym okazała się krata w kształcie litery W.
+                                Jest ona również najekonomiczniejsza. Daje najmniejsze zużycie materiału i tym samym najmniejszy ciężar.
+                                Wadą kraty w kształcie litery W jest duży rozstaw węzłów.
+                                Jest to bardzo niekorzystne ze względu na znaczne zginanie pasa obciążonego jezdnią.
+                                Stąd, w swojej najbardziej popularnej postaci dźwigar w kształcie litery W ma pręty dodatkowe — słupki i wieszaki,
+                                które włączają się do pracy tylko wówczas, gdy obciążenie znajduje się bezpośrednio między sąsiadującymi z nimi węzłami.
+                                Zmniejszają one długość prętów pasowych i tym samym ich zginanie.
+                            </p>
+                            <br>
+
+                            <div class='row'>
+                                <div class="col-12">
+                                    <p>Ze względów ekonomicznych, występują również dźwigary o pasie górnym krzywoliniowym</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_8.jpg" alt="">
+                                        <figcaption>Dźwigar główny z górnym pasem krzywym</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  src="../static/img/w6_2_9.jpg" alt="">
+                                        <figcaption>Dźwigar główny z dolnym pasem krzywym</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <p>
+                                Przy większych rozpiętościach konieczne jest stosowanie drugorzędnych słupków i krzyżólców w celu :
+                                <ul>
+                                    <li>
+                                        zmniejszenia zginania pasa dolnego oraz wprowadzenia dodatkowych węzłów, umożliwiających zamocowanie dodatkowych poprzecznie, co zmniejsza ciężar pomostu,
+                                    </li>
+                                    <li>
+                                        usztywnienia pasa górnego przeciw wyboczeniu przez wykorzystanie drugorzędnych słupków i wieszaków jako elementów stężenia poprzecznego mostu.
+                                    </li>
+                                </ul>
+                                <figure>
+                                    <img src="../static/img/w6_2_10.jpg" alt="">
+                                    <figcaption>Dźwigar główny z górnym pasem krzywym z drugorzędnym dolnyym podwieszeniem - dla mostu z jezdnią dolną</figcaption>
+                                </figure>
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <div id="article-3" class="main-article">
+                            <span>Systemy statyczne</span>
+                            <div id="article-3" class="main-article">
+                                <span class="under" id='article-3-1'>Belka swobodnie podparta</span>
+                                <div class='row m-1'>
+                                    <div class='col-md-6'>
+                                        <p>
+                                            Stosujemy o pasach równoległych (proporcja <sup>h</sup>/<sub>L</sub>=<sup>1</sup>/<sub>7</sub>) dla małych i średnich rozpiętości (do ~50m) oraz dla większych rozpiętości o pasach krzywoliniowym (proporcja <sup>h</sup>/<sub>L</sub>=<sup>1</sup>/<sub>5</sub>), zakratowaniu drugorzędnym.
+                                        </p>
+                                        <p> </p>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <figure>
+                                            <img  src="../static/img/w6_2_11.jpg" alt="Belka swobodnie podparta">
+                                        </figure>
+                                    </div>
+
+                                </div>
+                                <span class="under" id='article-3-2'>Belka ciągła</span>
+                                <div class='row m-1'>
+                                    <div class='col-md-6'>
+                                        <p>
+                                            Rzadziej występują, w wiekszości przypadkach to mosty kolejowe. Przeważnie pasy równoległe (proporcja <sup>h</sup>/<sub>L</sub>=<sup>1</sup>/<sub>9</sub>-<sup>1</sup>/<sub>10</sub>), ale również występują z zwiększoną wysokością nad podporami.
+                                        </p>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <figure>
+                                            <img  src="../static/img/w6_2_12.jpg" alt="Belka ciągła">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div id='article-4' class='main-article'>
+                            <span>Przekroje poprzeczne elementów kratownic</span>
+                            <br>
+                            <p>Współcześnie dominują przekroje dwuteowe i skrzynkowe.</p>
+                            <br>
+                            <p class="under">Występują:</p>
+                            <br><br>
+                            <div class="row m-0">
+                                <div class='col-md-6'>
+                                    <p>Nitowane:</p>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_13.jpg" alt="">
+                                        <figcaption>Przekroje pasów górnych </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_15.jpg" alt="">
+                                        <figcaption>Przekroje pasów dolnych </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_18.jpg" alt="">
+                                        <figcaption>Przekroje krzyżulców </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6' style="border-left:1px solid">
+                                    <p>Spawane:</p>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_14.jpg" alt="">
+                                        <figcaption>Przekroje pasów górnych </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_17.jpg" alt="">
+                                        <figcaption>Przekroje pasów dolnych </figcaption>
+                                    </figure>
+
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_19.jpg" alt="">
+                                        <figcaption>Przekroje krzyżulców </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-12'>
+                                    <br><br>
+                                    <p style='text-align:center'>Regułą są pasy o przekroju z dwiema ściankami pionowymi</p>
+                                    <br><br>
+                                </div>
+                                <div class='col-md-6'>
+                                    <br><br><br>
+                                    <p>Stosuje sie również kratownice przestrzenne dla większych rozpiętości</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img src="../static/img/w6_2_21.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div>
+                                <p>
+                                    W celu zabezpieczenia dolnych elementów pasów ściskanych stosuje sie <b>przewiązki</b>,
+                                    a dla zachowania prostokątnego kształtu przekroju pręta stosuje się <b>przepony</b>.
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w6_2_20.jpg" alt="">
+                                    <figcaption>Spawana konstrukcja przepony i przewiązki</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div id='article-5' class='main-article'>
+                            <span>Węzły dźwigarów kratownicowych</span>
+                            <br>
+                            <p class="under">Występują:</p>
+                            <br><br>
+                            <div class="row m-0">
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_22.jpg" alt="">
+                                        <figcaption>Blacha węzłowa jako przykładka </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_23.jpg" alt="">
+                                        <figcaption>Blacha węzłowa jako wstawka </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_24.jpg" alt="">
+                                        <figcaption>Blacha węzłowa spawana do poziomych ścianek pasów </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_25.jpg" alt="">
+                                        <figcaption>Blacha węzłowa zintegrowana z elementami dźwigara </figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6 offset-3'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_26.jpg" alt="">
+                                        <figcaption>Bezpośrednie mocowanie elementów zakratowania do pasów </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div id='article-6' class='main-article'>
+                            <span>Dźwigary kratownicowe ze sztywnym pasem</span>
+                            <p>Pas sztywny - rozumiemy jako pas dźwigara kratownicowego który jest <u>sztywny na zginanie</u> (dwuteowy lub skrzynkowy). </p>
+                            <p><em>Ze względu na przejmowanie obciążeń od zginania pas ten ma większą wysokość. Pas dolny jest obniżony względem tego jak powinien teoretycznie przebiegać.</em></p>
+                            <br>
+                            <p>
+                                Dzięki zastosowaniu pasa sztywnego obciążenia przekzywane są z pomostu na węzły i elementy pasa sąsiadującego z pomostem.
+                                Dźwigary kratownicowe nie posiadają przegubowych węzłów nie są także obciążone wyłącznie w węzłach - występują momenty zginające.
+                            </p>
+                            <br>
+                            <p>W celu ogranicznia wymiarów blach węzłowych pasy te usytuowane są mimośrodowo wzlędem teoretycznej siatki dźwigara.</p>
+                            <div class="row m-0">
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_27.jpg" alt="">
+                                        <figcaption>teoretyczna siatka kratownic</figcaption>
+                                    </figure>
+                                </div>
+                                <div class='col-md-6'>
+                                    <figure>
+                                        <img class="center-jpg" style="height:150px;" src="../static/img/w6_2_28.jpg" alt="">
+                                        <figcaption>lokalizacja poprzecznic</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div id='article-7' class='main-article'>
+                            <span>Zagadnienia analizy przęseł kratownicowych</span>
+                            <div>
+                                <p class="under">Dźwigary kratownicowe:</p>
+                                <ul>
+                                    <li>z węzłami nitowanymi - analiza jak ustrojó przegubowych,</li>
+                                    <li>z węzłami spawanymi - analiza jak ranownic (węzły sztywne)</li>
+                                    <p class='opis'>
+                                        wytężenie elementów dźwigara wywołują siły osiowe i momenty zginające:
+                                        <ul>
+                                            <li>w dźwigarach klasycznych &sigma;<sub>M</sub>&le;0,20 &sigma;<sub>N</sub></li>
+                                            <li>w dźwigarach współczesnych, szczególnie z pasem sztywnym, udział naprężeń od zginania jest znacznie większy.</li>
+                                        </ul>
+                                    </p>
+                                    <li>z pasem sztywnym - analiza jak ramownic</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="under">Stateczność pasów ściskanych:</p>
+                                <ul>
+                                    <li>w płaszczyźnie kratownicy - długość wyboczeniowa = odległość między węzłami,</li>
+                                    <li>z płaszczyzny kratownicy - długość wyboczeniowa zależy od warunków podparca pasów z płaszczyny dźwigara (stężenia podłużne, półramy).</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="under">Węzły dźwigarów kratownicowych:</p>
+                                <ul>
+                                    <li>w przybliżeniu płaski stan naprężenia - metody uproszczone, np. oszacowanie naprężeń w blasze węzłowej,</li>
+                                    <li>analiza "dokładna" metodami numerycznymi (MES).</li>
+                                </ul>
+                            </div>
+                            <br><br><br>
+                            <p>Współcześnie przęsła kratownicowe analizuje się jako układy przestrzenne.</p>
+                            <br><br>
+                            <p>Uwzględnia się współpracę pomostu i stężeń podłużnych.</p>
+                            <br><br>
+                            <p>Wpółpraca pomostu z dźwigarami głównymi ma konsekwencje korzystne i niekorzystne.</p>
+                        </div>
+                    </article>
+
+
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="{% url 'quiz_start' lecture=6 %}" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

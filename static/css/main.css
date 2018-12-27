@@ -58,13 +58,12 @@ body{
   flex-direction: column;
   justify-content: center;
   height: 180px;
-  width: 100%;
+  max-width: 300px;
   padding: 5%;
   -webkit-box-shadow: 0px 0px 10px 2px rgb(184, 184, 184);
   -moz-box-shadow: 0px 0px 10px 2px rgb(184, 184, 184);
   box-shadow: 0px 0px 10px 2px rgb(184, 184, 184);
   background-color: white;
-  position: relative;
   margin-bottom: 30px
 }
 
@@ -156,9 +155,11 @@ figure{
 figure > figcaption{
   display:block;
   margin:auto;
-  text-align: center;
-  font-size: 10px;
   max-width: 100%;
+  color: #383838;
+  font-size: 11px;
+  text-align:center;
+  font-style: italic;
 }
 
 

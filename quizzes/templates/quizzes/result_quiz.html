@@ -21,7 +21,10 @@
     <br><br>
     <div class='result-exp'>
         {% for key, value in quiz%}
+            <p class="quiz-podpowiedz" style="text-align:left">Zadanie:</p>
+            <p style="font-size:16px; margin-left:40px">
                 <b>{{value.outcome.text}}</b>
+            </p>
             <br><br>
 
             {% if value.outcome.score %}
@@ -59,8 +62,7 @@
                 </tbody>
             </table>
 
-
-            <small style="text-align: left"><b>Wytłumaczenie :</b></small>
+            <p><b>Wytłumaczenie :</b></p>
             <div class='exp'>
                 <p>{{value.outcome.exp}}</p>
             </div>

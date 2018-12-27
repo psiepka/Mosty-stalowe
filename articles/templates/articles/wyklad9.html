@@ -1,0 +1,926 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Wstęp</a>
+                    <a class="nav-link" href="#article-2">Stany graniczne</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-2-1">Stan graniczny nośności</a>
+                        <a class="nav-link ml-3 my-1" href="#article-2-2">Stan graniczny użytkowlności</a>
+                    </nav>
+                    <a class="nav-link" href="#article-3">Kombinacje obciążeń</a>
+                    <a class="nav-link" href="#article-4">Klasy przekroju</a>
+                    <a class="nav-link" href="#article-5">Naprężenia</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-5-1">Naprężenia normalne</a>
+                        <a class="nav-link ml-3 my-1" href="#article-5-2">Naprężenia styczne</a>
+                        <a class="nav-link ml-3 my-1" href="#article-5-3">Naprężenia zastępcze</a>
+                    </nav>
+                    <a class="nav-link" href="#article-6">Połączenia</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-6-1">Połączenia cierniowe</a>
+                        <a class="nav-link ml-3 my-1" href="#article-6-2">Naprężenia spawane</a>
+                    </nav>
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Wstęp</span>
+                            <br><br>
+                            <div class='row'>
+                                <div class='col-md-11' id='article-1-1'>
+                                    <p>
+                                        <span class='under'>Projektując</span> musimy kierować się podstawowymi wymaganiami i klasami niezawodności:
+                                    </p>
+                                    <ul>
+                                        <li>nośność, tj. zdolność do przenoszenia odpowiednich oddziaływań,</li>
+                                        <li>użytkowalność, tj. zdolność użytkową w sensie odpowiedniej sztywności,</li>
+                                        <li>trwałość, tj. przydatność do użytku w tzw. projektowym okresie użytkowania,</li>
+                                        <li>integralność strukturalna tj. nieuleganie nadmiernym zniszczeniom w wypadku zdarzeń wyjątkowych.</li>
+                                    </ul>
+                                    <br>
+                                    <p>
+                                        Projektowanie polega na określeniu efektów jakie w konstrukcji wywołują różne czynniki (oddziaływania)
+                                        i porównaniu tych efektów z pewnymi limitami bezwzględynymi lub wynikającymi z cech konstrukcji.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Efekty oddziaływań i cechy konstrukcji można określić liczbowo jedynie z pewnym prawdopodieństwem ich wystąpienia.
+                                        Mają one charakter zdarzeń losowych.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+
+                    </article>
+
+
+
+
+                    <article>
+                        <div id='article-2' class='main-article'>
+                            <span>
+                                Stany graniczne
+                            </span>
+                            <p>
+                                – stan konstrukcji, po osiągnięciu którego konstrukcja lub jej element zagraża bezpieczeństwu lub przestaje spełniać wymagania użytkowe.
+                            </p>
+                            <p>Pracę konstrukcji należy oceniać wg:</p>
+                            <ul>
+                                <li>
+                                    <span class="under">ULS - I stanu granicznego nośności,</span>
+                                </li>
+                                <p>-  które dotyczą bezpieczeństwa ludzi i/lub kontrukcji w kontekście:</p>
+                                <ul>
+                                    <li>
+                                        EQU - zachowania równowagi konstrukcji
+                                    </li>
+                                    <li>
+                                        STR - odkształceia materiału konstrukcji
+                                    </li>
+                                    <li>
+                                        GEO - deformacji podłoża
+                                    </li>
+                                    <li>
+                                        FAT - zniszczenia zmęczeniowego
+                                    </li>
+                                </ul>
+                                <figure>
+                                    <img  src="../static/img/w9_1.jpg" alt="">
+                                    <figcaption>Kryterium nośności i sztywności</figcaption>
+                                </figure>
+                            </ul>
+                            <br>
+                            <div id='article-2-1'>
+
+                                <p class="under">
+                                    <u>
+                                        Stany graniczne nośności  stalowych konstrukcji mostowych
+                                    </u>
+                                </p>
+                                <p>Celem obliczeń wg SGN jest sprawdzenie, czy w każdej fazie pracy konstrukcji (np. transportu, budowy, eksploatacji) zapewniono dostateczne bezpieczeństwo ze względu na:</p>
+                                <br><br>
+                                <ol type="a" class='under'>
+                                    <li>Wytrzymałośc sprężysta stali (STR):</li>
+                                    <figure>
+                                        <img  src="../static/img/w9_6.jpg" alt="">
+                                    </figure>
+                                    <li>
+                                        Stateczność kształtu elementów smukłych (EQU)
+                                    </li>
+                                    <p> - w prostych stanach naprężenia</p>
+                                    <figure>
+                                        <img  src="../static/img/w9_7.jpg" alt="">
+                                    </figure>
+
+                                    <p>
+                                        Przy sprawdzeniu <b>stateczności miejscowej w złożonym stanie napreżenia</b> odpowiednie składowe stanu napreżenia ( &sigma;, &tau; ) mnoży sie przez współczyniki warunków pracy &chi;
+                                    </p>
+                                    <br><br>
+                                    <li>
+                                        Ze względu na zmęczenie stali (FAT)
+                                    </li>
+
+
+                                    <figure>
+                                        <img  src="../static/img/w9_8.jpg" alt="">
+                                    </figure>
+
+
+
+                                    <li>Stateczności położenia całych przęseł (GEO)</li>
+                                    <p>
+                                        W każdej fazie budowy i ekspolatacji mostu musi być zapewnione bezpieczeństwo przęseł ze względu na ich wywrócenie lub przesunięcie na łozyskach
+                                    </p>
+                                    <br>
+                                    <p>Sprawdza się warunek:</p>
+
+                                    <figure>
+                                        <img  src="../static/img/w9_9.jpg" alt="">
+                                    </figure>
+
+                                </ol>
+
+                            </div>
+                            <hr>
+                            <div id='article-2-2'>
+
+                                <ul>
+                                    <li>
+                                        <span class="under">SLS - II stanu granicznego użytkowalności</span>
+                                    </li>
+                                    <p>-  które dotyczą sztywności konstrukcji związane z normalnym jej funkcjonowaniem, komfortem użytkowników i wyglądem.</p>
+                                    <p>
+                                        Stosuje się obciążenie obliczeniowe ze współczynnikami bezpieczeństwa równymi jedności (matematycznie równe obc. charakterystycznym),
+                                        pomija się osłabienie przekrojów spowodowane otworami na nity i śruby.
+                                    </p>
+                                    <figure>
+                                        <img  src="../static/img/w9_2.jpg" alt="">
+                                        <figcaption>Kryterium użytkowalności</figcaption>
+                                    </figure>
+                                </ul>
+                                <p class="under">
+                                    <u>
+                                        Stany graniczne użytkowalności stalowych konstrukcji mostowych
+                                    </u>
+                                </p>
+                                <br><br>
+                                <p>Powinny być spełnione następujące kryteria:</p>
+                                <ol type="a">
+                                    <li>
+                                        Założenie pracy sprężystej w celu ograniczenia:
+                                    </li>
+                                    <ul>
+                                        <li>nadmiernego uplastycznienia</li>
+                                        <li>odchyłek od zamierzonej geometerii na skuter trwałych ugięć</li>
+                                        <li>nadmiernych przemieszczeń</li>
+                                    </ul>
+                                    <li>
+                                        ograniczenie ugięć i krzywizn w celu zabezpieczenia przed:
+                                    </li>
+                                    <ul>
+                                        <li>niepożądanymi uderzeniami dynamicznymi od ruchu (kombinacja ograniczenia ugięć i częstotiliwości drgań własnych)</li>
+                                        <li>naruszeniem wymaganej skrajni</li>
+                                        <li>zarysowaniem warstw powierzchniowych</li>
+                                        <li>uszkodzeniem systemu odwodnienia</li>
+                                    </ul>
+                                    <li>
+                                        Ograniczenie częstotiliwości drgań własnych, aby:
+                                    </li>
+                                    <ul>
+                                        <li>wykluczyć drgania wywołane rychem lub wiatrem, które są nieakceptowalne przez pieszych lub pasażerów samochodów korzystającyych z mostu</li>
+                                        <li>ograniczyć uszkodzenia zmęczeniowe spowodowane rezonanasem</li>
+                                        <li>ograniczyć nadmierną emisję hałasu</li>
+                                    </ul>
+                                    <li>
+                                        Ograniczenie smukłości płyt, w celu ograniczenia:
+                                    </li>
+                                    <ul>
+                                        <li>nadmiernego falowania płyt</li>
+                                        <li>efektu "oddychania" w blachach</li>
+                                        <li>redukcja sztywności na skutek wyboczenia, co powoduje zwiększenie ugięć</li>
+                                    </ul>
+                                    <li>Podwyższenie trwałości poprzez odpowiednie konstruowanie w celu zmiejszenia korozji i nadmiernego zniszczenia.</li>
+                                    <li>Ułatwienie utrzymania i napraw, aby</li>
+                                    <ul>
+                                        <li>dostęp do elementów konstrukcji z uwagi na utrzymanie i kontrole odnowę zabezpieczeń przed korozją i odnowę nawierzchni asfaltowych</li>
+                                        <li>wymianę łożysk, kotew, kabli, złączy dylatacyjnych przy minimalnych ograniczeniach w użytkowaniu konstrukcji</li>
+                                    </ul>
+                                </ol>
+    
+                                <br><br>
+                                <p style="text-align:center">
+                                    <b>
+                                        Naprężenia w stanach granicznych użytkowalności określa się na podstawie analizy sprężystej.
+                                    </b>
+                                </p>
+                                <br><br>
+                                <p>Postawowe SGU dla mostów stalowych:</p>
+                                <ol type="a">
+                                    <li>
+                                        ograniczenie przemieszczeń pionowych dźwigarów belkowych
+                                    </li>
+                                    <div>
+                                        <b>Sztywność belkowych przęseł mostowych.</b>
+                                        <p>
+                                            W mostach bardzo ważną sprawą jest odpowiednia sztywność konstrukcji. Wyraża ją wartość strzałki ugięcia od obciążenia ruchomego. Dopuszczalna strzałka ugięcia dla dźwigarów pełnościennych wynosi:
+                                            <ul>
+                                                <li>
+                                                    w mostach kolejowych: f<sub>p max</sub> = 1/600 * L
+    
+                                                </li>
+                                                <li>
+                                                    w mostach drogowych: f<sub>p max</sub> = 1/300 * L
+    
+                                                </li>
+                                            </ul>
+                                        </p>
+                                        <P>
+                                            Wartości strzałki ugięcia dźwigarów pełnościennych można obliczać w sposób przybliżony, wprowadzając tzw. <u>obciążenie zastępcze</u>.
+                                        </P>
+                                        <br>
+                                        <figure>
+                                            <figcaption>Definicja obciążenia zastępczego</figcaption>
+                                            <img  src="../static/img/w9_10.jpg" alt="">
+                                        </figure>
+                                        <br>
+                                        <P>
+                                            Mając maksymalny moment zginający w środku rozpiętości dźwigara od
+                                            obciążenia ruchomego bez uwzględnienia wpływu dynamicznego,
+                                            przyjmujemy obciążenie zastępcze równomiernie rozłożone na całej długości dźwigara, dokonując przekształcenia wzoru:
+                                        </P>
+                                        <br>
+                                        <figure>
+                                            <img  src="../static/img/w9_11.jpg" alt="">
+                                        </figure>
+    
+                                        <p>od którego ugięcie w środku rozpiętości dźwigara wynosi:</p>
+    
+                                        <figure>
+                                            <figcaption>Przybliżone wzory do obliuczenia ugięcia</figcaption>
+                                            <img  src="../static/img/w9_12.jpg" alt="">
+                                        </figure>
+    
+    
+                                        <P>
+                                            Wzór ten słuszny jest w przypadku stałej sztywności dźwigara: El = const.
+                                        </P>
+                                        <P>
+                                            Gdy przekrój dźwigara jest zmienny, wartość strzałki ugięcia można w przybliżeniu przyjąć o 10% większą (przyjmujemy maksymalny moment bezwładności w tym przypadku)
+                                        </P>
+                                    </div>
+    
+                                    <li>
+                                        ograniczenie podstawowego okresu pionowych drgań własnych przęsła
+                                    </li>
+    
+                                    <figure>
+                                        <img  src="../static/img/w9_13.jpg" alt="">
+                                    </figure>
+                                    <p>
+                                        Częstość drgań własnych, częstość drgań wymuszających oraz własności dłumienia drgań są parametrami,
+                                        od których zależy wielkość przeciążenia dynamiecznego układu (współczynnik dynamiczny)
+                                    </p>
+    
+    
+                                    <li>
+                                        nadanie dźwigarom głównym przęsła odpowiedniego podniesienia wykonawczego
+                                    </li>
+    
+    
+                                    <p>Dźwigarom głównym o rozpiętości większej od 30 metrów należy nadawać podniesienie wykonawcze równe:</p>
+    
+                                    <figure>
+                                        <img  src="../static/img/w9_14.jpg" alt="">
+                                    </figure>
+    
+                                    <p>
+                                        Dla konstrukcji całkowicie spawanych podane wartości f<sub>trw</sub> należy zminiejszyć o 50%
+                                    </p>
+    
+                                </ol>
+    
+    
+                                <p>
+                                    W przypadku mostów kolejowych przeznaczonych do ruchu pociągów z dużymi prędkościami (>160 km/h) sprawdza się jeszcze szereg innych SGU dotyczących:
+                                </p>
+                                <ul>
+                                    <li>bezpieczeństwa ruchu taboru kolejowego</li>
+                                    <li>komfortu pasażerów</li>
+                                </ul>
+    
+    
+                                <br><br>
+                                <p>
+                                    W przypadku obiektów w ciągu lini dużych prędkości należy dodatkowo sprawdzić
+                                </p>
+                                <ul>
+                                    <li>
+                                        przyspieszenia pionowego przęsła
+                                    </li>
+                                    <li>
+                                        kąt obrotu przęsła w punkcie podparcia
+                                    </li>
+                                </ul>
+    
+                            </div>
+                        </article>
+
+                        <article>
+                            <div id='article-3' class='main-article'>
+                            <p>
+                                Metoda stanów granicznych związana jest z granicą tolerancji dla niekorzystnych losowych odchyleń obciążeń, nośności i wymiarów elementów od wartości oczekiwanych.
+                            </p>
+                            <p>
+                                W stanie granicznym nośności stosuje się obliczeniowe wartości obciążeń i obliczeniowe wartości wytrzymałości.
+                                Obliczeniowe wartości uwzględniają niepewności dotycznące obciążeń, wytrzymałości materiału oraz wymiaru i pracy konstrukicji, poprzez współczynniki częściowe bezpieczeństwa.
+                            </p>
+                            <p>
+                                W stanie granicznym użytkowalności stosuje charakterystyczne wartości obciążeń i charakterystyczne wartości sprężystości.
+                            </p>
+                            <br><br><br>
+                            <p>
+                                Stany graniczne sprawdza się w róznych warunkach pracy konstrukcji.
+                            </p>
+                            <p>Warunki te różnią się naturą obciążeń, prawdopodbieństwem wystąpienia itp.</p>
+                            <br>
+                            <p>W celu uwzględnienia tych różnic wprowadza się <b>sytuacje obliczeniowe:</b></p>
+                            <ul>
+                                <li><b>trwałe</b> (użytkowanie zgodne z przeznaczeniem obiektu, przy typowych oddziaływaniach),</li>
+                                <li><b>przejściowe</b> (roboty budowlane),</li>
+                                <li><b>wyjątkowe</b> (pożar, uderzenie, wybuch),</li>
+                                <li><b>sejsmiczne</b> (trzęsienie ziemi).</li>
+                            </ul>
+                            <br><br>
+
+                            <p>
+                                    Podczas sprawdzania stanów granicznych pod uwagę branych jest zwykle więcej niż jedno obciążenie - <b>kombinacje obciążeń</b>.
+                                    Wybierając kombinację obciążeń bierze się pod uwagę prawdopodobieństwo ich jednoczesnego wystąpienia kontekście zachowania niezmiennego poziomu bezpieczeństwa.
+                            </p>
+                            <br><br>
+                            <p>
+                                <em>
+                                     Prawdopodobieństwo, że konstrukcja jest bezpieczna wobec pojedynczego oddziaływania powinna być takie samo jak prawdopobieństwo,
+                                     że konstrukcja jest bezpieczna wobec np. trzech jednoczesnych oddziwałowywań.
+                                </em>
+                            </p>
+                            <br><br>
+                            <p>
+                                Z tego powodu wprowadza się współczynniki kombinacyjne, które redukują wartości charakterystyczne oddziaływań działających jednocześnie.
+                            </p>
+                            </div>
+                        </article>
+
+
+                        <article>
+                            <div id='article-4' class='main-article'>
+                                <p>
+                                    <b>Siły wewnętrzne</b> można wyznaczyć stosując:
+                                    <ol>
+                                        <li>
+                                            globaną analize sprężystą - można stosować w każdym przypadku
+                                            <br>zakecana gdy nośniść przekrojów jest uwarunkowana niestatecznością miejscową (możemy stosować w przypadku elementów o przekroju każdej klasy)
+                                        </li>
+                                        <li>
+                                            globalną analiza plastyczną - sprężysto plastyczną lub sztywno-plastyczną (możemy stosować w przypadku elementów o przekroju klasy 1 i 2)
+                                        </li>
+                                    </ol>
+                                </p>
+                                <p><em>Gdzie klasa przekroju:</em></p>
+                                <br>
+                                <p>
+                                    <b>Klasa pierwsza</b> – odnosi się do przekrojów które osiągają nośność plastyczną, a przeguby plastyczne mają pełną możliwość obrotu niezbędną do redystrybucji momentów zginających.
+                                </p>
+                                <br>
+
+                                <p>
+                                    <b>Klasa druga</b> – są to przekroje wątpliwe, które osiągają ograniczoną nośność plastyczną, ze względu na ograniczoną możliwość obrotu w wymaganym przegubie plastycznym, przez co uniemożliwiona  jest pełna redystrybucja momentów zginających.
+                                </p>
+                                <br>
+
+                                <p>
+                                    <b>Klasa trzecia</b> – przekroje tej klasy nie osiągają nośności przegubu plastycznego, ale osiągają nośność sprężystą, obserwowaną wraz z początkiem uplastycznienia dowolnego punktu w przekroju.
+                                </p>
+                                <br>
+                                <em>Ścianki elementów konstrukcyjnych o przekrojach klasy 1, 2 i 3 nie tracą stateczności miejscowej, a do przekrojów stosowana jest nazwa – przekroje krępe.</em>
+                                <br><br>
+                                <p>
+                                    <b>Klasa czwarta</b> dotyczy elementów cienkościennych osiągających nośność zakrytyczną, która jest mniejsza niż nośność sprężysta, ze względu na utratę stateczności miejscowej przez ściankę przekroju (wybrzuszenie, zwichrowanie, itp). Przekroje klasy 4 popularnie nazywa się przekrojami smukłymi.
+                                </p>
+                                <p class="m-1">
+                                    <em> - Wskaźnik wytrzymałości belki należy określić dla przekroju zastępczego - z potraceniem fragmentu ściskanej części środnika:</em>
+                                </p>
+
+                                <figure>
+                                    <img  src="../static/img/w9_3.jpg" alt="">
+                                    <figcaption>Rozkłady naprężeń w zginanych przekrojach poszczególnych klas</figcaption>
+                                </figure>
+                                <p>
+                                    <b>Klasa przekroju</b> ustala się w zaleźności od smukłości ścianek λ=c/t. Na rysunku poniżej pokazano sposób wyznaczania wymiarów c i t ścianek przekroju.
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w9_4.jpg" alt="">
+                                    <figcaption>Definicja szerokości c i grubości t ścianki do wyznaczania jej smukłości</figcaption>
+                                </figure>
+                                <p style="text-align:right">gdzie : c - grubość ścianki, t - szerokość nieusztywnionej ścianki</p>
+                        </div>
+                    </article>
+
+
+
+
+                    <article>
+                        <div id='article-5' class="main-article">
+                            <span>Naprężenia</span>
+                            <br><br>
+                            <p>
+                                Projektując belkę z warunku nośności sprawdzamy, czy maksymalne naprężenia &sigma; <sub>max</sub> wywołane obciążeniami <u>nie przekraczają</u> naprężeń dopuszczalnych.</p>
+                            <br>
+                            <hr>
+                            <div>
+                                <p><b>Zginanie belek w jedej płaszczyźnie</b></p>
+                                <figure>
+                                    <img  src="../static/img/w9_24.jpg" alt="">
+                                </figure>
+                                <figure>
+                                    <figcaption>Naprężenia występujące w punkcie</figcaption>
+                                    <img  src="../static/img/w9_23.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div id='article-5-1'>
+                                <p>
+                                    <b>Naprężenia normalne</b> określa się wzorem:
+                                </p>
+                                <br>
+                                <figure>
+                                    <img  src="../static/img/w9_15.jpg" alt="">
+                                </figure>
+
+                                <p>
+                                    Rozkład naprężeń normalnych jest liniowy na grubości przekroju belki, a maksymalne
+                                    wartości występują w skrajnych włóknach. W przypadku przekrojów symetrycznych,
+                                    np. prostokątny lub dwuteowy, wielkość z jest równa połowie wysokości przekroju,
+                                    a naprężenia w górnej i dolnej części przekroju są sobie równe co do wartości,
+                                    lecz mają przeciwne znaki
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w9_18.jpg" alt="">
+                                </figure>
+                            </div>
+                            <hr>
+                            <div id='article-5-2'>
+                                <p>
+                                    <b>Naprężenia styczne</b> określa się wzorem:
+                                    <figure>
+                                        <img  src="../static/img/w9_16.jpg" alt="">
+                                    </figure>
+                                </p>
+                                <p>Naprężenia styczne są wywołane działaniem siły tnącącej. Maksymalną wartość przyjmuje w osi obojętnej przekroju, dla przekrojów symetrycznych jest to środek wysokości przekroju</p>
+                                <figure>
+                                    <img  src="../static/img/w9_19.jpg" alt="">
+                                </figure>
+                            </div>
+                            <hr>
+                            <div id='article-5-3'>
+                                <p>
+                                    <b>Naprężenia zastępcze</b> określa się wzorem:
+                                </p>
+                                <p>- dla belek zginanych w jedenj płaszczyźnie</p>
+
+                                <figure>
+                                    <img  src="../static/img/w9_17.jpg" alt="">
+                                </figure>
+                                <br>
+                                <p>- dla belek zginanych w dwóch płaszczyznach</p>
+                                <figure>
+                                    <img  src="../static/img/w9_25.jpg" alt="">
+                                </figure>
+                                <br>
+
+                                <p>
+                                    Naprężenia zastępcze sprawdzamy dla złożonego stanu naprężenia:
+                                    <ul>
+                                        <li>w miejscach występowania dużych momentów oraz sił poprzecznych</li>
+                                        <li>w belce ciągłej - nad podporami pośrednimi</li>
+                                        <li>w miejscach zmiany przekroju </li>
+                                    </ul>
+                                </p>
+                            </div>
+
+                        </div>
+                    </article>
+
+
+
+
+
+
+
+
+                    <article>
+                        <div id='article-6' class="main-article">
+                            <span>Połączenia - styki blachownic</span>
+
+                            <br>
+                            <p>
+                                Ukształtowanie elementów konstrukcyjnych o wymaganej długości i przekroju wymaga łączenia wytwarzanych profili walcowanych oraz blach. Połączenia te uzyskuje się przez <b>nitowanie, śruby, śruby sprężające lub spawane</b>.
+                            </p>
+                            <figure>
+                                <img  class="center-jpg" style="height:250px;" src="../static/img/w9_22.jpg" alt="">
+                                <figcaption>Typy belek dwuteowych</figcaption>
+                            </figure>
+
+                            <br>
+
+                            <p>Przeciętna różnica w ciężarze między konstrukcją nitowaną i spawaną o tej samej nośności wynosi 15%. Jest to również różnica w ilości zużytej stali.</p>
+
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img  class="center-jpg" style="height:250px;" src="../static/img/w9_20.jpg" alt="">
+                                        <figcaption>Przekrój dźwigara nitowanego lub na śruby sprężające</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <img class="center-jpg" style="height:250px;" src="../static/img/w9_21.jpg" alt="">
+                                        <figcaption>Przekrój dźwigara spawanego</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <p>
+                                Przyczyny stosowania styków elementów blachownic
+                            </p>
+                            <ul>
+                                <li>zmiana przekroju poprzecznego w celu zmiany sztywności belki</li>
+                                <li>ograniczenia produkcyjne transportowe</li>
+                            </ul>
+                            <br>
+                            <p>Rodzaje styków</p>
+                            <ul>
+                                <li>
+                                    warsztatowe belek
+                                </li>
+                                <li>montażowe</li>
+                            </ul>
+
+                            <p>
+                                Styki blachownic projektuje się "na przekrój".
+                                Oznacza to, że nośność styku jest równa nośności elementu <em>stykowanego.</em>
+                            </p>
+
+
+                            <div id='article-6-1'>
+                                <hr>
+                                <span class="under">Połączenia na śruby sprężające oraz nity</span>
+                                <div class="row">
+                                    <div class='col-md-6' style='text-align: center; vertical-align: middle; line-height:100%'>
+                                        <br><br>
+                                        Ogólna zasada połączeń nitowanych oraz na śruby polega na tym, że łączenie elementów w jednej płaszczyźnie odbywa się za pośrednictwem nakładek, a elementów łączonych w dwóch różnych płaszczyznach za pośrednictwem kątowników.
+                                    </div>
+                                    <br><br>
+                                    <p>
+                                        Obliczenie <u>styku na śruby sprężające</u> polega na określeniu potrzebnej liczby śrub lub na określeniu siły przypadającej na śrube najbardziej obciążona.
+                                    </p>
+                                    <br>
+                                    <div class='col-md-6'>
+                                        <figure>
+                                            <img  src="../static/img/w9_26.jpg" alt="">
+                                            <figcaption>Schematy obciążenia łączników</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <p>
+                                    Połączenia na nity obecnie zostało wyparte przez połączenia na śruby o wysokiej wytrzymałości, tzw. śruby sprężające lub również nazywane połączeniemi cierniowymi. W takim połączeniu siły przenoszone są poprzez <b>tarcie</b> między stykającymi się powierzchniami elementów, dociskanymi do siebie przez silnie naprężone śruby. Śruby wchodzą w otwory swobodnie i nie pracują na ścinanie, lecz na rozciąganie od siły wstępnego naciągu. 
+                                </p>
+                                <br>
+                                <p>Siła tarcia, która może być przeniesiona przez styk bez poślizgu zależy od:</p>
+                                <ul>
+                                    <li>sposobu przygotowania stykających się powierzchni łączonych elementów, ściślej współczynika tarcia (&mu;)</li>
+                                    <li>siły wzajemnego docisku (N) łączonych elementów wprowadzona poprzez naciąg śrub, dzięki kontrolowanemu dokręceniu nakrętek</li>
+                                    <li>liczby powierzchni styku</li>
+                                </ul>
+                                <p>Oraz określa się wzorem :</p>
+                                <p style="text-align:center; font-size:20px">
+                                    <b>
+                                        T = n * &mu; * N
+                                    </b>
+                                </p>
+                                <p>
+                                    <em>
+                                        gdzie:
+                                        <br>T - siła tarcia [kN]
+                                        <br>&mu; - współczynnik tarcia [-]
+                                        <br>N - siła docisku [kN]
+                                    </em>
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w9_27.jpg" alt="">
+                                    <figcaption>Na czerwono zaznaczono powierzchnie styku (2) </figcaption>
+                                </figure>
+                                <br>
+                                <p>
+                                    Wstępny naciąg realizuje się przez dokręcenie nakrętek specjalnym kluczem dynamometrycznym.
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w9_28.jpg" alt="">
+                                    <figcaption>Przykład klucza dynamometrycznego</figcaption>
+                                </figure>
+                                <br>
+                                <p>
+                                    <b>
+                                        Norma PN-EN zaleca stosowanie <u>połączeń ciernych</u> w przypadku obciążeń wielokrotnie zmiennych,
+                                        obciążeń udarowych, wibracyjnych oraz obciążeń o zmiennym znaku.
+                                    </b>
+                                </p>
+                                <br><br>
+
+
+                                <p>
+                                    W przypadku śrub sprężających w miejscach styku można zastosować grubsze blachy pasowe, aby zrekompensować osłabienie przekroju otworami.
+                                </p>
+                                <figure>
+                                    <img  src="../static/img/w9_29.jpg" alt="">
+                                    <figcaption>Styk uniwersalny</figcaption>
+                                </figure>
+
+                                <p>
+                                    Łaczniki w połączeniu powinny być rozmieszczane symetrycznie w stosunku do przekazywanej siły lub środka ciężkości łaczonych blach.
+                                </p>
+                                <br><br>
+                                <p>
+                                    Norma PN-EN zezwala przyjmować liniowo-sprężysty rozkład sił na łączniki.
+                                </p>
+                                <br>
+                                <p>
+                                    W przypadku połączeń zakładkowych obciążonych jedynie osiową siłą ścinającą należy uwzględnić nierównomierny rozkład siły na łączniki
+                                    (w rzeczywistości największe obciążenia przenoszą łaczniki w skrajnych rzędach)
+                                </p>
+                                <br>
+                                <p>Nośność połączenia określa się sprawdzając nośność pojedynczego, najbardziej obciążnonego łącznika.</p>
+                                <br>
+                                <p>Warunki nośności łącznika w połączeniu ciernym różnią się w zależności od jego kategorii tego połączenia.</p>
+                                <br><br><br>
+                                <p><b>Warunki nośności pojedynczych śrub</b></p>
+                                <br>
+                                <p>
+                                    W przypadku śruby sprężającej podstawową jest jej nośność <u>na poślizg</u>.
+                                    Wynika ona z wartości siły sprężenia śruby, F<sub>p,C</sub> okreslanej wzorem:
+                                </p>
+                                <p style="text-align:center; font-size:20px">
+                                    <b>
+                                        F<sub>p,C</sub> = 0,7 * f<sub>ub</sub> * A<sub>s</sub>
+                                    </b>
+                                </p>
+                                <p>
+                                    <em>
+                                        gdzie:
+                                        <br>f<sub>ub</sub> - wytrzymałość stali, z której wykonano śrube
+                                        <br>A<sub>s</sub> - pole przekroju trzpienia w części nagwintowanej
+                                    </em>
+                                </p>
+                                <br><br>
+                                <p>Ponadto sprawdza sie nośnośc śruby na <b>ścinanie</b> oraz <b>docisk</b>.</p>
+                                <p>
+                                    <em>Szczegóły znajdziemy w normie PN-EN-1993-1-8: Projektowanie konstrukcji stalowych, Projektowanie węzłów</em>
+                                </p>
+                            </div>
+
+
+                            <br><br><br><br>
+
+                            <div id='article-6-1'>
+                                <hr>
+                                <span class="under">Połączenia spawane</span>
+                                <br>
+                                <br>
+
+                                <p>
+                                    W elementach spawanych łączenia blach dokonuje się bezpośrednio za pomocą spoin czołowych lub pachwinowych.
+                                </p>
+
+
+
+                                <figure>
+                                    <img  src="../static/img/w9_30.jpg" alt="">
+                                    <figcaption>a) Spoina czołowa    b) Spoina pachwinowa</figcaption>
+                                </figure>
+
+                                <p>Ogólne informacje na temat:</p>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <figure>
+                                            <img  src="../static/img/w9_36.jpg" alt="Spoina pachwinowa">
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br><br><br><br>
+                                        <p>
+                                            Spoiny pachwinowe mogą być stosowane do łączenia części, których ścianki tworzą kąt między 60° a 120°, w przypadku mniejszego kąta niż 60° spoina powinna być traktowana jako czołowa z niepełnym przetopem.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><b>Spoin czołowych</b></p>
+
+                                        <p>
+                                            Grubość <b>a</b> spoiny czołowej przyjmuje się równą grubości elementów łączonych, a w przypadku łączenia elementów różnych grubości przyjmuje się równą grubości cieńszego elementu.
+                                        </p>
+
+
+                                        <figure>
+                                            <img  src="../static/img/w9_31.jpg" alt="">
+                                            <figcaption>Grubość spoiny czołowej</figcaption>
+                                        </figure>
+
+                                        <p>
+                                            Jako długość <b>l</b> spoin czołowych przyjmuje się do obliczenia szerokość elementów łączonych
+                                            bez odliczania kraterów pod warunkiem wyprowadzenia spoin na podkładki.
+                                        </p>
+                                        <br><br>
+                                        <br>
+                                        <p>
+                                            Połączenie spoinami czołowymi blach o różnych grubościach. Przy stykowaniu elementów o różnych grubościach, w przypadkach gdy krawędzie czoła blach przesunięte są względem siebie więcej niż o 5 mm, należy blachę grubszą zukosować do grubości blachy cieńszej przy pochyleniu co najmniej 1 : 5
+                                        </p>
+                                        <figure>
+                                            <img  src="../static/img/w9_34.jpg" alt="">
+                                            <figcaption>Zukosowanie blachy</figcaption>
+                                        </figure>
+                                        <p>
+                                                Przy mniejszym przesunięciu należy wykonać spoinę, jak na rys.
+                                        </p>
+
+                                        <figure>
+                                            <img  src="../static/img/w9_35.jpg" alt="">
+                                            <figcaption>Mała różnica grubości blach</figcaption>
+                                        </figure>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><b>Spoin pachwinowych</b></p>
+                                        <p>
+                                            Grubość <b>a</b> spoiny pachwinowej przyjmuje się równą wysokości trójkąta wpisanego, jak na rysunku
+                                        </p>
+
+
+
+                                        <figure>
+                                            <img  src="../static/img/w9_32.jpg" alt="">
+                                            <figcaption>Grubość spoiny pachwinowej</figcaption>
+                                        </figure>
+                                        <p>
+                                            Grubość spoin pachwinowych, wykonanych lukiem krytym lub w inny sposób zapewniający głęboki wtop, może być przyjmowana jako 1,25 <b>a</b>
+                                        </p>
+
+                                        <figure>
+                                            <img  src="../static/img/w9_33.jpg" alt="">
+                                            <figcaption>Zwiększona grubość spoiny pachwinowej</figcaption>
+                                        </figure>
+
+                                        <p>
+                                            Jako długość spoin pachwinowych przyjmuje się do obliczenia całkowitą długość spoiny l<sub>o</sub> zmniejszoną o długość kraterów końcowych, wtedy długość spoiny <b>l</b>=l<sub>o</sub>-2a
+                                        </p>
+                                        <br><br>
+
+                                    </div>
+                                </div>
+                                <br><br>
+
+
+                                <div>
+                                    <span class="under">Połączenia spawane pasów ze środnikiem</span>
+                                    <p>
+                                        W belce spawanej sprawdzamu (projektujemy) podłużne spoiny pachwinowe w połączeniu pasa ze środnikiem.
+                                        <br>
+                                        Sytuacje obliczeniowe:
+                                    </p>
+                                    <br>
+                                    <ol type="I">
+                                        <li>poza miejscami działania znacznych sił skupionych - <b style="font-size:20px;">&tau;</b></li>
+                                        <br>
+                                        <li>w miejscu oddziaływania znacznych sił skupionych (np. nacisk mostownicy) - <b style="font-size:20px;">&tau;<sub>h</sub></b>, <b style="font-size:20px;">&tau;<sub>v</sub></b></li>
+                                        <br>
+                                        <li>w miejscu działania znacznych M i Q (podpory pośrednie belek ciągłych, naroża ram) - <b>naprężenia zastpęcze <span style="font-size:20px;">&sigma;<sub>z</sub></span></b> w spoinie</li>
+                                    </ol>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <hr>
+                            <div>
+                                <span class="under">Styki blach pasowych</span>
+                                <br>
+                                <p>
+                                    Śruby i nakładki w stykach blach pasowych (także spoiny w stykach spawanych) oblicza się na <u>siły osiowe</u>.
+                                </p>
+                                <p style="text-align:center; font-size:20px">
+                                    <b>
+                                        N<sub>p</sub> = A<sub>nt</sub> * &sigma;
+                                    </b>
+                                </p>
+                                <p>
+                                    <em>
+                                        gdzie:
+                                        <br>A<sub>nt</sub> - pole przekroju netto przewidywanej blachy pasowej
+                                        <br>&sigma; - naprężenie w środku ciężkości tej blachy
+                                    </em>
+                                </p>
+
+                                <br><br>
+                                <p>Należy stosować minimum 3 śruby po jednej stronie styku</p>
+
+                            </div>
+                            <hr>
+                            <div>
+                                <span class="under">Słupki podporowe i żebra pod siłami skupionymi</span>
+                                <br>
+                                <p>
+                                    Należy sprawdzić warunek na <u>wyboczenie</u> i na <u>docisk</u>.
+                                </p>
+                                <br>
+
+                                <p><b>Warunek na wyboczenie:</b></p>
+                                <p style="text-align:center; font-size:20px">
+                                    <b>
+                                        &sigma; = <sup>P * &chi;<sub>w</sub></sup>/<sub>A<sub>s</sub></sub> &lE; f<sub>yd</sub>
+                                    </b>
+                                </p>
+                                <p>
+                                    <em>
+                                        gdzie:
+                                        <br>P - siła skupiona lub reakcja podpory
+                                        <br>&chi;<sub>w</sub> - współczynnik wyboczeniowy dla l<sub>w</sub> równej długości słupka
+                                        <br>A<sub>s</sub> - przekrój brutto żebra wraz z odcinkiem środnika o długości nie większej niż 15*&epsilon; jego grubości z każdej strony
+                                    </em>
+                                </p>
+                                <br><br>
+                                <p><b>Warunek na docisk:</b></p>
+                                <p style="text-align:center; font-size:20px">
+                                    <b>
+                                        &sigma;<sub>doc</sub> = <sup>P </sup>/<sub>A<sub>doc</sub></sub> &lE; f<sub>yd</sub>
+                                    </b>
+                                </p>
+                                <p>
+                                    <em>
+                                        gdzie:
+                                        <br>P - siła skupiona lub reakcja podpory
+                                        <br>A<sub>doc</sub> - oznacza pole powierzchni docisku, które określa się następująco:
+                                        <ul>
+                                            <li>w przypadku żebra jest to przekrój obliczeniowy żebra</li>
+                                            <li>w przypadku słupka podporowego - przekrój żebra i środnika na długości równej długości górnej płyty łożyskowej</li>
+                                        </ul>
+                                    </em>
+                                </p>
+                                <br>
+                                <p>
+                                    UWAGA
+                                </p>
+                                <p>
+                                    <b>Połączenie żebra ze środnikiem należy obliczać na całkowitą siłę przenoszoną przez żebro</b>
+                                </p>
+
+
+
+                            </div>
+
+
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="{% url 'quiz_start' lecture=6 %}" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

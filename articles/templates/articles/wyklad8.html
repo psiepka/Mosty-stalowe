@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Wstęp</a>
+                    <a class="nav-link" href="#article-2">Charakterystyka pracy</a>
+                    <a class="nav-link" href="#article-3">Połączenie stal-beton</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-3-1">Siła rozwarstwiająca</a>
+                        <a class="nav-link ml-3 my-1" href="#article-3-2">Łączniki</a>
+                    </nav>
+                    <a class="nav-link" href="#article-4">Płyta pomostowa</a>
+                    <a class="nav-link" href="#article-5">Rozwarstwienie w płycie betonowej</a>
+
+
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Wstęp</span>
+                            <br><br>
+                            <div class='row'>
+                                <div class='col-md-11' id='article-1-1'>
+                                    <span class='under'>Konstukcje zespolone</span>
+                                    <p>
+                                        - wynikają z łączenia różnych materiałów konstrukcyjnych.
+                                        Mosty zespolone to mosty z pomostem gdzie stalowy dźwigar pełnościenny współpracuje z żelbetową płytą pomostową.
+                                        Elementy te zostają ze sobą połączone na całej długości w sposób wykluczający ich rozwarstwienie.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Szczególnie korzystne efekty współpracy dają się zaobserwować w belkach jednoprzęsłowych,
+                                        wolnopodpartych (będących pod działaniem tylko momentów dodatnich).
+                                        W belkach takich płyta pomostowa zastępuje,
+                                        albo wzmacnia półkę górną dźwigara zwiększając jego moment bezwładności i przejmując na siebie naprężenia ściskające.
+                                        Naprężenie rozciągające przyjmuje stalowa (dolna) część dźwigara.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Współpracująca betonowa płyta pomostowa może być żelbetowa łub sprężona.
+                                        Płyta otrzymuje zbrojenie podłużne i poprzeczne.
+                                        Zbrojenie poprzeczne, układane prostopadle do belek,
+                                        oblicza się traktując płytę jako pasmo (belkę) o szerokości 1 m o schemacie statycznym zależnym od układu podparć
+                                        (dźwigarów głównychi podłużnie — zazwyczaj schemat belki ciągłej).
+                                        Zbrojenie podłużne (równoległe do belek) wynika z naprężeń, jakie przejmuje płyta z racji swojej współpraćy z dźwigarami.
+                                        Często stosuje się sprężenie płyty w kierunku podłużnym,
+                                        a nieraz także w kierunku poprzecznym. Dla zapewnienia właściwej współpracy płyty z belkami,
+                                        na górnych półkach belek stosuje się kotwy lub opórki uniemożliwiające wzajemne przesuwanie się obu połączonych elementów.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Wprowadzenie betonu zbrojonego na pomosty mostów metalowych okazało się ogólnie korzystne z uwagi na:
+                                        <ul type='none'>
+                                            <li>
+                                                — szczelność pomostu i zabezpieczenie go przed korozją, a dźwigarów stalowych przed opadami atmosferycznymi,
+                                            </li>
+                                            <li>
+                                                — zmniejszenie wpływu oddziaływań dynamicznych,
+                                            </li>
+                                            <li>
+                                                — prostotę wykonania i łatwość eksploatacji.
+                                            </li>
+                                        </ul>
+                                        Zasadniczą wadą tego typu rozwiązań był natomiast duży ciężar własny zwiększający przekrój dźwigarów głównych.
+                                        Okazało się jednak, jak to wspomniano wcześniej, że można nie dopuścić do większego zużycia stali, a wręcz uzyskać efekty oszczędnościowe wciągając płytę pomostową do współpracy z dźwigarami stalowymi. Obecnie mosty zespolone stalcwo-betonowe zna- lazły szerokie zastosowanie dzięki dodatkowym korzyściom, takim jak:
+                                        <ul>
+                                            <li>
+                                                oszczędności zużycia stali przeciętnie 12%, a nawet dcchcdzącej do 40%,
+                                            </li>
+                                            <li>
+                                                zmniejszeniu wysokości konstrukcyjnej izędu 15-r25%,
+                                            </li>
+                                            <li>
+                                                zmniejszeniu ugięć dzięki większej sztywności,
+                                            </li>
+                                            <li>
+                                                znacznej redukcji stężeń,
+                                            </li>
+                                            <li>
+                                                eliminacji rusztowań opartych na gruncie.
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                            <figure>
+                                <img  src="../static/img/w8_1.jpg" alt="">
+                                <figcaption>Przekrój podłużny dźwigara z żelbetową płytą współpracującą</figcaption>
+                            </figure>
+                    </article>
+                    <article>
+                        <div id='article-2' class='main-article'>
+                            <span>Charakterystyka pracy</span><br>
+                            <p>
+                                W mostach zespolonych można wyodrębnić charakterystyczne stany pracy:
+                            </p>
+                            <ol type="I">
+                                <br>
+                                <li>
+                                    przed zespoleniem, w którym obciążenia (np. ciężar konstrukcji stalowej,
+                                    podwieszonych rusztowań, niezwiązanego betonu itp.) przejmuje ustrój stalowy,
+                                </li>
+                                <br>
+                                <li>
+                                    po zespoleniu, w którym obciążenie (np. ciężar nawierzchni, instalacji miejskich, obciążenia użytkowe ruchome)
+                                    przejmuje dźwigar stalowy trwale połączony z płytą betonową.
+                                    W dowolnym przekroju rozkład naprężeń w wymienionych stadiach pracy będzie wyglądał jak na rysunków poniżej.
+                                    Z rysunku wynika, że przy symetrycznym przekroju belki stalowej naprężenia rozciągające będą większe od naprężeń ściskających.
+                                    Im większy będzie stosunek obciążeń w stanie II do obciążeń w stanie I,
+                                    tym większa będzie różnica naprężeń ściskających i rozciągających w stanie użytkowym,
+                                    zatem przekrój dźwigara musi być <b>niesymetryczny</b>,
+                                    musi być rozbudowany w strefie naprężeń rozciągających.
+                                    Ma to zasadniczy wpływ na ukształtowanie przęsłowego przekroju poprzecznego, tj. przekroju, w którym płyta pomostowa znajduje się w strefie ściskanej.
+                                    Aktualnie najczęściej spotyka się przekroje dwudźwigarowe, wielodźwigarowe, skrzynkowe (rys. 7.4),
+                                    w których płyta betonowa jest opierana bądź tylko na pasach dźwigarowych podłużnych (zwykle przy rozstawie dźwigarów mniejszym od 3 m),
+                                    bądź na dźwigarach podłużnych i na poprzecznych
+                                    (wtedy rozstaw dźwigarów poprzecznych przyjmuje się l-r2 razy większy od rozstawu dźwigarów głównych)
+                                </li>
+                            </ol>
+                            <figure>
+                                <img  src="../static/img/w8_2.jpg" alt="">
+                                <figcaption>Rozkład naprężeń w przekroju zespolony</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+                    <article>
+                        <div class='main-article' id='article-3'>
+                            <span>Połączenie dźwigara z płytą pomostową</span>
+                            <br><br>
+                            <p>
+                                Zadaniem łączników jest zapewnienie współodkształcalności betonu i stali.
+                                Muszą one zatem przenieść naprężenia <b>rozwarstwiające</b> powstałe na styku betonu i stali oraz naprężenia główne rozciągające.
+                                Efekt zespolenia jest lepszy im lepsza jest klasa betonu.
+                            </p>
+                            <br>
+                            <div id='article-3-1' class="m-0">
+                                <span class="under">Siła rozwarstwiająca</span>
+                                <p>
+                                    Siły rozwarstwiające pojawiają się przy połaczeniu stalowego dźwigara z betonową płytą pomostową,
+                                    muszą być przeniesione w całośc przez łączniki. Siły te działają w kierunku wzdłuż bellki.
+                                    W przypadku zginania belki zespolonej konsekwencją sił rozwarstwiających jest poślizg betonu po stali.
+                                </p>
+                                <br>
+                                <p>Wzór:</p>
+                                <div class="row">
+                                    <div class='col-md-6'>
+                                        <figure>
+                                            <img  src="../static/img/w8_9.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <br>
+                                        <p>
+                                            <em>
+                                                Gdzie:
+                                                <br>Ved - siła rozwarstwiająca,
+                                                <br>V - siła poprzeczna,
+                                                <br>Sb - moment statyczny częsci przekroju "odcinanej"(zakreskowana na rysunku poniżej) przez siłe rozwarstwiającą,
+                                                <br>Ic - moment bezwładności belki zespolonej przy zginaniu.
+                                            </em>
+                                        </p>
+                                    </div>
+                                    <figure>
+                                        <img  src="../static/img/w8_11.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <p>
+                                    Siły rozwarstwiające zmieniają się wzdłuż belki tak jak siły poprzeczne <br>
+                                    - są najmniejsze w środku przęsła i rosną ku podporom.
+                                </p>
+                                <br>
+                                <p>
+                                    W praktyce projektowej oblicza sie całkowitą siłe rozwarstwiającą przypadającą na pewien odcinek i określa się potrzebną liczbe łaczników, które należy umieścic na tym odcinku.
+                                </p>
+                                <br>
+                                <p>Całkowita siła rozwarswiająca na odcinku i-j:</p>
+                                <figure>
+                                    <img  src="../static/img/w8_12.jpg" alt="Wzór na siłe rozwarstwiającą na odcinku">
+                                </figure>
+                                <figure>
+                                    <img  src="../static/img/w8_13.jpg" >
+                                    <figcaption>Rozkład siły rozwarstwiającej na belce swobodnie podpartej</figcaption>
+                                </figure>
+                            </div>
+                            <br>
+                            <div id='article-3-2' class="m-0">
+                                <span class="under">Łączniki</span>
+                                <p>Do połączenia wykonywanej w deskowaniu płyty betonowej z dźwigarem stalowym służą:</p>
+                                <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class='col-md-3'>
+                                                łączniki sztywne (opórki)
+                                            </div>
+                                            <div class='col-md-9'>
+                                                <figure>
+                                                    <img  src="../static/img/w8_6.jpg" alt="">
+                                                    <figcaption>Łącznik masywny (opórka - zaliczająca sie do łaczników sztywnych)</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class='col-md-3'>
+                                                łączniki wiotkie (kotwy)
+                                            </div>
+                                            <div class='col-md-9'>
+                                                <figure>
+                                                    <img  src="../static/img/w8_7.jpg" alt="">
+                                                    <figcaption>Ukośna kotwa ze stali okrągłej</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class='col-md-3'>
+                                                trzpienie
+                                            </div>
+                                            <div class='col-md-9'>
+                                                <figure>
+                                                    <img  src="../static/img/w8_8.jpg" alt="">
+                                                    <figcaption>Trzpienie oporowe</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <span class="under">Rozmieszczenie łączników</span>
+                                <p>
+                                    Łączniki rozmieszczamy na długości belki w taki sposób,
+                                    aby zapobiec podłużnemu ścięciu lub oddzieleniu płyty betonowej od belki stalowej,
+                                    przy uwzględnieniu rzeczywistego rozkładu <b>siły rozwarstwiającej</b>.
+                                </p>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class='main-article' id="article-4">
+                            <span>Płyta pomostowa</span>
+                            <p>
+                                Płyty mogą być o stałej grubości, albo o grubości zwiększonej nad belkami stalowymi.
+                                Przez wprowadzenie skosów o zmiennej wysokości można uzyskać potrzebne pochylenie poprzeczne.
+                                Skosy są też korzystne ze <b>względów wytrzymałościowych</b>.
+                                Zaleca się, aby wysokość skosów nie przekraczała 1,5-krotnej grubości płyty.
+                            </p>
+                            <figure>
+                                <img  src="../static/img/w8_4.jpg" alt="">
+                                <figcaption>Przekroje belek zespolonych</figcaption>
+                            </figure>
+                            <p>
+                                Stosowane przekroje dźwigarów zespolonych przedstawiono na rysunku poniżej.
+                                Przekrój pasa górnego uzależniony jest od warunków konstrukcyjnych (stanowi oparcie płyty betonowej oraz podłoże dla łączników) oraz warunków wytrzymałościowych.
+                                Ze względów konstrukcyjnych minimalny przekrój pasa górnego wynosi 200x10 mm.
+                                Grubości pasa nie należy przyjmować mniejszej od 1/10 wysięgu półki.
+                                Szerokość pasa ściskanego jest najcześciej przyjmowana jest w granicach 200-400 mm.
+                                Grubość blach pionowych określona może być z warunków:
+                            </p>
+                            <figure>
+                                <img  src="../static/img/w8_3.jpg" alt="">
+                            </figure>
+
+                            <p>
+                                Wymiary przekroju pasa rozciąganego powinny odpowiadać następującym zaleceniom:
+                            </p>
+                            <figure>
+                                <img  src="../static/img/w8_5.jpg" alt="">
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class='main-article' id="article-5">
+                            <span>Rozwarstwienie w płycie betonowej</span>
+                            <p class="under"></p>
+                            <p>
+                                Analiza dotyczy pionowego przekroju przez płtytę w płaszczyźnie bocznej ściany żebra.
+                                Sprawdzenie obejmuje nośność ściskanych krzyżulców betonowych i rozciąganego zbrojenia poprzecznego (model kratownicy).
+                            </p>
+                            <figure>
+                                <img  src="../static/img/w8_16.jpg" alt="">
+                                <figcaption>Przekroje belek zespolonych</figcaption>
+                            </figure>
+                            <figure>
+                                <img  src="../static/img/w8_17.jpg" alt="">
+                                <figcaption>Model kratownicy</figcaption>
+                            </figure>
+                            <p>
+                                Dla poziomych przekrojów płyty naprężenia te rosną ku dołowi od wartości zero na górnej powierzchni.
+                                Największe wartości wystąpiłyby tuż nad górnym pasem belki stalowej,
+                                lecz na skutek działania opórek, które stopniowo przejmują na siebie siły ścinające,
+                                naprężenia ścinające osiągną największą wartość w poziomie górnej krawędzie opórek (1-1) i zmniejszą się do zera na górnej powierzchni pasa górnego.
+                                Niebezpieczne mogą być też przekroje 2-2, 3-3 ale najbardziej niebezpieczny jest przekrój po obwodzie łacznika 4-4.
+                            </p>
+                            <br><br>
+                            <p><em>Przekroje ścinane w płycie:</em></p>
+                            <figure>
+                                <img  src="../static/img/w8_14.jpg" alt="">
+                                <figcaption>Przekroje belek zespolonych</figcaption>
+                            </figure>
+                            <figure>
+                                <img  src="../static/img/w8_15.jpg" alt="">
+                                <figcaption>Przekroje belek zespolonych</figcaption>
+                            </figure>
+                            <p>Aby nie doszło do rozwarswienia betonu naprężenie ścinające nie mogą przekroczyć naprężeń dopuszczalnych na "bezpośrednie ścinanie".</p>
+                        </div>
+                    </article>
+
+
+
+
+
+
+
+
+
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="{% url 'quiz_start' lecture=6 %}" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}

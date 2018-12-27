@@ -20,3 +20,19 @@ def wyklad_4(request):
 
 def wyklad_5(request):
     return render(request, 'articles/wyklad5.html', {'title':'Wyklad 5'})
+
+
+def wyklad_6(request):
+    return render(request, 'articles/wyklad6.html', {'title':'Wyklad 6'})
+
+
+def wyklad_7(request):
+    return render(request, 'articles/wyklad7.html', {'title':'Wyklad 7'})
+
+
+def wyklad_8(request):
+    return render(request, 'articles/wyklad8.html', {'title':'Wyklad 8'})
+
+
+def wyklad_9(request):
+    return render(request, 'articles/wyklad9.html', {'title':'Wyklad 9'})

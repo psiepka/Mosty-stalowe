@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row content-box">
+        <div class="col-lg-3 nav-borderr">
+            <nav id="navbar-example3" class="navbar-white bg-white sticky-top nav-patryk">
+                <a class="navbar-brand" href="#"> Spis treści: </a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#article-1">Zalety i wady</a>
+                    <a class="nav-link" href="#article-2">Typy mostów łukowych</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#article-2-1">Klasyczny most łukowy</a>
+                        <a class="nav-link ml-3 my-1" href="#article-2-2">Most łukowy wzmocniony belką</a>
+                    </nav>
+                    <a class="nav-link" href="#article-3">Kształtowanie elementów konstrukcji</a>
+                    <a class="nav-link" href="#article-4">Układy zawiesi</a>
+
+                </nav>
+            </nav>
+        </div>
+        <div class="col-lg-9 block-articles">
+        <main>
+            <section>
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="50">
+                    <article>
+                        <div id="article-1" class="main-article">
+                            <span>Wstęp</span>
+                            <br><br>
+                            <div class='row'>
+                                <div class='col-md-11' id='article-1-1'>
+                                    <p>
+                                        Mosty łukowe bywają stosowane do pokonywania przeszkód wymagających przęseł o większej, rzadziej średniej rozpiętości.
+                                        Głównie stosujemy jako mosty drogowe i miejskie ze względu na walory architektoniczne, jako mosty kolejowe przy dużych rozpiętościach.
+                                        Generalnie rzadko stosujemy, ze względu na złożoną konstrukcje, montaż (relatwnie droższy) oraz droższe utrzymanie takich mostów.
+                                        Nieomal z reguły stosuje się łuki dwuprzegubowe, ale podparcie dźwigarów łukowych może być przegubowe lub "utwierdzone"(sztywne).
+                                        Pomost w stosunku do łuków może być usytuowany górą, dołem (możliwa mała wysokość konstrukcyjna) lub pośrednio.
+                                        W układach rozporowych wymagają korzystnych warunków geologicznych (dlatego często występują w wąskich i głebokich dolinach).
+                                    </p>
+                                </div>
+                            </div>
+                            <figure>
+                                <img  src="../static/img/w2_4.jpg" alt="">
+                                <figcaption>Na rysunku pokazano most łukowy klasyczny z:
+                                        a) jazdą górą
+                                        b) jazdą pośrednia
+                                        c) jazdą dołem
+                                </figcaption>
+                            </figure>
+                    </article>
+                    <article>
+                        <div id='article-2' class='main-article'>
+                            <span>Typy mostów łukowych</span>
+                            <p>
+                                <br> W mostach łukowych spotyka się dwa rozwiązania:
+                                <br> — ustrojem nośnym są dźwigary łukowe, a na nich za pośrednictwem słupków oparty, lub za pośrednictwem wieszaków podwieszony jest pomost z jezdnią (most łukowy klasyczny ),
+                                <br> — ustrojem nośnym są belki wzmocnione wiotkimi łukami.
+                            </p>
+                            <br><br><br>
+                            <div id="article-2-1">
+                                <span class="under">Klasyczny most łukowy</span>
+                                <p>
+                                    Najbardziej klasyczne rozwiązanie konstrukcyjne mostu łukowego (rys powyżej podpkt a) stanowią dźwigary łukowe, na których za pośrednictwem słupków jest oparty pomost (wiotki).
+                                    Rozwiązanie to można stosować jedynie tam, gdzie istnieje możliwość budowy fundamentów,
+                                    mogących przejąć znaczną reakcję poziomą pochodzącą od rozporu łuku.
+                                    Mosty omawianej konstrukcji są chętnie budowane w górach ze względu na znaczną wyniosłość łuku oraz możliwość budowy odpowiednich fundamentów.
+                                </p>
+                                <br>
+                                <div class='row m-4'>
+                                    <div class="col-md-6">
+                                        Przeciętnie wyniosłość dźwigara łukowego waha się w granicach:
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure>
+                                            <img  src="../static/img/w7_2.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-6">
+                                        Stosunek wysokości dźwigara do rozpiętości zazwyczaj jest w pobliżu
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure>
+                                                <img  src="../static/img/w7_3.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <figure>
+                                    <img  src="../static/img/w7_1.jpg" alt="">
+                                    <figcaption>Dźwigar łukowy dwuprzegubowy z pomostem na słupkach</figcaption>
+                                </figure>
+                            </div>
+
+                            <div id="article-2-2">
+                                <span class="under">Most łukowy wzmocniony belką</span>
+                                <p>
+                                    W tym rozwiązaniu pomost pełni funkcje ściągu, może być wiotki(rozciągany) lub sztywny (rozciągany i zginany).
+                                    W przypadku zastosowania pomostu sztywnego rozstaw poprzecznic może być rózny od rozstawu mocowań zawiesi.
+                                    Niekorzystną dla posadowienia reakcję poziomą można przejąć ściągiem.
+                                    Dźwigar łukowy staje się wtedy ustrojem zewnętrznie statycznie wyznaczalnym wymagającym podparcia na jednym łożysku przegubowym i drugim przegubowo-przesuwnym.
+                                    W tym przypadku konieczna jest budowa pomostu podwieszonego do dźwigarów łukowych.
+                                    Pomost sam jest ściągiem dźwigarów łukowych albo też oddzielnie wykonstruowany, ściąg zostaje do pomostu podwieszony.
+                                </p>
+                                <p>
+                                    Dźwigary łukowe ze ściągiem są mało popularne ze względu na swój bardzo ciężki wygląd. Równocześnie mają one rzeczywiście duży ciężar, większy od ciężaru dźwigarów kratowych.
+                                </p>
+                                <br>
+                                <div class='row m-4'>
+                                    <div class="col-md-6">
+                                        Przeciętnie wyniosłość dźwigara łukowego waha się w granicach:
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure>
+                                            <img  src="../static/img/w7_4.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-6">
+                                        Stosunek wysokości dźwigara do rozpiętości zazwyczaj jest w pobliżu
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure>
+                                                <img  src="../static/img/w7_5.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <figure>
+                                    <img  src="../static/img/w7_6.jpg" alt="">
+                                    <figcaption>Ustrój belkowy wzmocniony łukiem</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+
+                    <article>
+                        <div id="article-3" class="main-article">
+                            <span>Kształtowanie elementów konstrukcji</span>
+                            <div>
+                                <span class='under'>Kształtowanie dźwigara głównego</span>
+                                <p>
+                                    Przy średnich, rozpiętościach można stosować łuki o przekroju jednościennym — z reguły dwuteowym, symetrycznym.
+                                    Przekroje dwuścienne stosowane są przy łukach silniej obciążonych oraz przy większych rozpiętościach.
+                                    Są one kształtowane podobnie jak pasy ściskane dźwigarów kratowych.
+                                    Przekrój dwuścienny może być od dołu otwarty lub zamknięty.
+                                    W obu przypadkach dla zachowania kształtu muszą być wykonane przepony.
+                                    Odległość dwudzielnych blach dolnych w przekroju otwartym musi być odpowiednio duża (min. ~ >30cm),
+                                    dla zachowania możliwości dojścia do wnętrza łuku podczas nitowania lub spawania oraz dla konserwacji.
+                                    W przekroju zamkniętym przepony muszą mieć otwory przełazowe (odpowiedni odstęp blach pionowych ~ >50cm).
+                                </p>
+
+                                <figure>
+                                    <img  src="../static/img/w7_7.jpg" alt="">
+                                    <figcaption>Przekroje dwuścienne dźwigarów łukowych</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                    <div id='article-4' class='main-article'>
+                        <span>Układy zawiesi</span>
+                        <br>
+                        <p class="under">Występują następujące układy zawiesi:</p>
+                        <br><br>
+                        <div class="row m-0">
+                            <div class='col-md-6'>
+                                <figure>
+                                    <img class="center-jpg" style="height:150px;" src="../static/img/w7_8.jpg" alt="">
+                                    <figcaption>Prosty (Langera)</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class='col-md-6'>
+                                <figure>
+                                    <img class="center-jpg" style="height:150px;" src="../static/img/w7_9.jpg" alt="">
+                                    <figcaption>Nielsen </figcaption>
+                                </figure>
+                            </div>
+
+                            <div class='col-md-6'>
+                                <figure>
+                                    <img class="center-jpg" style="height:150px;" src="../static/img/w7_10.jpg" alt="">
+                                    <figcaption>Wachlarzowy </figcaption>
+                                </figure>
+                            </div>
+
+                            <div class='col-md-6'>
+                                <figure>
+                                    <img class="center-jpg" style="height:150px;" src="../static/img/w7_11.jpg" alt="">
+                                    <figcaption>Wielokrotny</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+
+                </div>
+            </section>
+            <p style="text-align:center">Czujesz że zapamiętałeś i zrozumiałeś powyższe wiadomości?</p>
+            <a href="{% url 'quiz_start' lecture=6 %}" class='center-button'><button class="btn btn-secondary">Sprawdź się!</button></a>
+        </main>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('body').scrollspy({ target: '#navbar-example3' })
+</script>
+{% endblock %}
