@@ -144,3 +144,8 @@ def quiz_mega(request, question):
             }
             return redirect('quiz_mega_start')
     return render(request, 'quizzes/quiz_mega.html', context=content)
+
+
+def quiz_view_all(request, lecture):
+    quiz = QuestionQuiz.objects.filter(lecture=lecture)
+    return render(request, 'quizzes/quiz_all.html', {'quiz':quiz})

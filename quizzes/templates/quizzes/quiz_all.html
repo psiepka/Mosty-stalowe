@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="fsdcenter">
+
+
+
+        <div class='result-exp'>
+            {% for question in quiz.all %}
+        <p class="quiz-podpowiedz" style="text-align:left"><em>Zadanie o ID - </em> <u><b>{{question.id}}</b></u></p>
+            <h6 style="text-align:left">
+                {{question.question_text}} 
+            </h6>
+               <table class="table table-bordered">
+                    <tbody>
+                    {% for a in question.answers.all %}
+                        <tr>
+                            <td class='p-0'>
+                                {% if a.correct %}
+                                    <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
+                                        {{ a.text }}
+                                    </p>
+                                {% else %}
+                                    <p class="form-check-label m-1 p-2" style="background-color: rgb(255, 195, 195)">
+                                        {{ a.text }}
+                                    </p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <p><b>Wytłumaczenie:</b></p>
+                <div class='exp'>
+                    <p>{{ question.explanation }}</p>
+                </div>
+                <br><br>
+                <hr>
+            {% endfor %}
+        </div>
+
+
+
+</div>
+
+
+{% endblock %}

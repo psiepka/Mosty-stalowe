@@ -40,7 +40,7 @@
       <div class="collapse navbar-collapse priority" id="navbarMS">
         <ul class="navbar-nav mr-auto submenu">
           <li class="nav-item active dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle border-left ml-2 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wykłady <span class="sr-only">(current)</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -55,7 +55,7 @@
                 <a class="dropdown-item" href="{% url 'wyklad7' %}">Wykład 9</a>
           </li>
           <li class="nav-item dropdown priority">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle border-left px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Quizy
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
@@ -69,14 +69,14 @@
               <a class="dropdown-item" href="{% url 'quiz_start' lecture=7 %}">Quiz 8</a>
               <a class="dropdown-item" href="{% url 'quiz_start' lecture=7 %}">Quiz 9</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item disabled" href="#">MEGA QUIZ</a>
+              <a class="dropdown-item" href="{% url 'quiz_mega_start' %}">MEGA QUIZ</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+            <a class="nav-link border-left px-3" href="{% url 'contact' %}">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'bibliography' %}">Bibliografia</a>
+            <a class="nav-link border-left border-right px-3" href="{% url 'bibliography' %}">Bibliografia</a>
           </li>
         </ul>
       </div>
