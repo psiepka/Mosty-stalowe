@@ -30,13 +30,13 @@
     </div>
     <script type="text/javascript">var galTable= new Array(); var galx = 0;</script><script type="text/javascript">function simplecookienotification_v01_create_cookie(name,value,days) { if (days) { var date = new Date(); date.setTime(date.getTime()+(days*24*60*60*1000)); var expires = "; expires="+date.toGMTString(); } else var expires = ""; document.cookie = name+"="+value+expires+"; path=/"; document.getElementById("simplecookienotification_v01").style.display = "none"; } function simplecookienotification_v01_read_cookie(name) { var nameEQ = name + "="; var ca = document.cookie.split(";"); for(var i=0;i < ca.length;i++) { var c = ca[i]; while (c.charAt(0)==" ") c = c.substring(1,c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length); }return null;}var simplecookienotification_v01_jest = simplecookienotification_v01_read_cookie("simplecookienotification_v01");if(simplecookienotification_v01_jest==1){ document.getElementById("simplecookienotification_v01").style.display = "none"; }</script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark priority">
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <img src="../static/img/bridge.jpg" width="50" height="30" alt="" style="margin-right:15px">MOSTY STALOWE
+      <a class="navbar-brand ml-5 pl-5" style="font-size: 25px; font-family:'Courier New', Courier, monospace" href="{% url 'home' %}">
+        <em>Mosty Stalowe</em>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMS" aria-controls="navbarMS" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+      <br>
       <div class="collapse navbar-collapse priority" id="navbarMS">
         <ul class="navbar-nav mr-auto submenu">
           <li class="nav-item active dropdown">
@@ -54,7 +54,6 @@
                 <a class="dropdown-item" href="{% url 'wyklad7' %}">Wykład 8</a>
                 <a class="dropdown-item" href="{% url 'wyklad7' %}">Wykład 9</a>
           </li>
-
           <li class="nav-item dropdown priority">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Quizy
@@ -69,7 +68,6 @@
               <a class="dropdown-item" href="{% url 'quiz_start' lecture=7 %}">Quiz 7</a>
               <a class="dropdown-item" href="{% url 'quiz_start' lecture=7 %}">Quiz 8</a>
               <a class="dropdown-item" href="{% url 'quiz_start' lecture=7 %}">Quiz 9</a>
-
               <div class="dropdown-divider"></div>
               <a class="dropdown-item disabled" href="#">MEGA QUIZ</a>
             </div>

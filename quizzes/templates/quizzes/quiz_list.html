@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="fsdcenter">
+    <p style="font-size:14px">
+        <b>
+                Lista dostępnych quizów :
+        </b>
+    </p>
+    <br><br>
+    <div class="list-group">
+        <a href="{% url 'quiz_start' lecture=1 %}" class="list-group-item list-group-item-action">Quiz 1</a>
+        <a href="{% url 'quiz_start' lecture=2 %}" class="list-group-item list-group-item-action">Quiz 2</a>
+        <a href="{% url 'quiz_start' lecture=3 %}" class="list-group-item list-group-item-action">Quiz 3</a>
+        <a href="{% url 'quiz_start' lecture=4 %}" class="list-group-item list-group-item-action">Quiz 4</a>
+        <a href="{% url 'quiz_start' lecture=5 %}" class="list-group-item list-group-item-action">Quiz 5</a>
+        <a href="{% url 'quiz_start' lecture=6 %}" class="list-group-item list-group-item-action">Quiz 6</a>
+        <a href="{% url 'quiz_start' lecture=7 %}" class="list-group-item list-group-item-action">Quiz 7</a>
+        <a href="{% url 'quiz_start' lecture=8 %}" class="list-group-item list-group-item-action">Quiz 8</a>
+        <a href="{% url 'quiz_start' lecture=9 %}" class="list-group-item list-group-item-action">Quiz 9</a>
+        <br>
+        <a href="#" class="list-group-item list-group-item-action">Mega Quiz</a>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,50 +1,8 @@
+from django.shortcuts import get_list_or_404
 import random
 from django.db import models
 
 # Create your models here.
-
-
-class Quiz:
-    def __init__(self, question, answers, correct):
-        self.question = question
-        self.answers = answers
-        self.correct = correct
-        self.asking_questions = []
-
-    def ask_questions(self):
-        random.shuffle(self.answers)
-        self.asking_questions = self.answers[:]
-        if len(self.answers) > 4:
-            while len(self.asking_questions) > 4:
-                random.shuffle(self.asking_questions)
-                del self.asking_questions[0]
-            return self.asking_questions
-        else:
-            return self.asking_questions
-
-    def check_answer(self, answers):
-        correct = 0
-        ans = 0
-        for q in self.asking_questions:
-            if q in self.correct:
-                ans += 1
-        for a in answers:
-            if a in self.correct:
-                correct +=1
-        if correct == ans:
-            return True
-        else:
-            return False
-
-    def check_answer_basic(self, answ):
-        correct = 0
-        for a in answ:
-            if a in self.correct:
-                correct += 1
-        if correct == len(self.correct):
-            return True
-        else:
-            return False
 
 
 class QuestionQuiz(models.Model):
@@ -97,6 +55,40 @@ class QuestionQuiz(models.Model):
                 ans += 1
         for q in user_answers:
             if self.answers.get(text=q).correct:
+                correct += 1
+            else:
+                correct -= 1
+        if correct == ans:
+            return True
+        else:
+            return False
+
+    def throw_mega_answers(self):
+        """
+        Returns:
+            list -- contain answers that user will see on quiz, max lenght of list-4, min-len( all answers belong to question)
+        """
+        a = get_list_or_404(self.answers)
+        random.shuffle(a)
+        ans = a[:4]
+        return ans
+
+    def check_mega_answer(self, quiz_answers, user_answers):
+        """
+        Arguments:
+            quiz_answers {database object} -- all answers that user have option to pick
+            user_answers {database object} -- answers that user send in request
+
+        Returns:
+            Boolean -- True if all answers was correct
+        """
+        correct = 0
+        ans = 0
+        for q in quiz_answers:
+            if q.correct:
+                ans += 1
+        for q in user_answers:
+            if q.correct:
                 correct += 1
             else:
                 correct -= 1

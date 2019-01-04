@@ -3,17 +3,7 @@
 {% block content %}
 <div class="fullscreenDiv">
 
-    <div class="fsdcenter">
-        {% if data %}
-            <h1>Gratuluje uzyskałeś/aś <b>{{ wynik }} % z quizu </b>. </h1>
-            {% if wynik == 100 %}
-                <p>Super wiedza kontynuuj z czystym sumieniem</p>
-            {% else %}
-                <p>Powtórz wiadomości bo Ci sie w zyciu nie uda</p>
-            {% endif %}
-        {% else %}
-            <h1>Pompka, łeb mi spuchł w tym momencie</h1>
-        {% endif %}
-    </div>
+    {{ request.session.mega }}
+
 </div>
 {% endblock %}

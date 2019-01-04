@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="grid mt-4">
+        <h1>Quiz</h1>
+        <p id='quiz-podpowiedz'>Wybierz wszystkie poprawne odpowiedzi (możliwy wybór 0-4 odpowiedzi)</p>
+        <br>
+        <h6 style="text-align:left">
+            <em>
+                Pytanie z wykładu {{ question.lecture }} :
+            </em>
+        </h6>
+        <h5 >
+            {{ question.question_text }}
+        </h5>
+        <div class="mt-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table class="table table-hover table-bordered">
+                    <tbody>
+                    {% for a in ans %}
+                        <tr>
+                            <td class='p-0'>
+                                <label class="form-check-label m-1 p-2" style="width:100%; height:100%">
+                                    <input type="checkbox" name='mega' value="{{a}}">
+                                    {{a}}
+                                </label>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name='submit' value="Sprawdź">
+            </form>
+        </div>
+    <hr style="margin-top: 25px">
+    {% if request.session.mega %}
+        <p class="quiz-podpowiedz" style="text-align:left"><em>Poprzednie zadanie</em>:</p>
+        <h6 style="text-align:left">
+            {{ request.session.mega.text}}
+        </h6>
+        <br><br>
+
+        {% if request.session.mega.score %}
+            <p class="ans-correct">Brawo odpowiedziałeś poprawnie.</p>
+        {% else %}
+            <p class="ans-incorrect">Niestety odpowiedziałeś fatalnie.</p>
+        {% endif %}
+        <br>
+
+        <table class="table table-bordered">
+            <tbody>
+            {% for a in  request.session.mega.ans %}
+                <tr>
+                    <td class='p-0'>
+                        {% if a in request.session.mega.send and a in request.session.mega.answers %}
+                            <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
+                            <b>{{ a }}</b>
+                            </p>
+                        {% elif a not in request.session.mega.send and a in request.session.mega.answers %}
+                            <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
+                            {{ a }}
+                            </p>
+                        {% elif a in request.session.mega.send and a not in request.session.mega.answers %}
+                            <p class="form-check-label m-1 p-2" style="background-color: rgb(255, 195, 195)">
+                            <b>{{ a }}</b>
+                            </p>
+                        {% else %}
+                            <p class="form-check-label m-1 p-2">
+                                {{ a }}
+                            </p>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <p><b>Wytłumaczenie :</b></p>
+        <div class='exp'>
+            <p>{{  request.session.mega.exp }}</p>
+        </div>
+
+
+
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}
