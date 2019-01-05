@@ -20,6 +20,7 @@
     <title>{{ title }}</title>
   </head>
   <body>
+
     <div id="simplecookienotification_v01" style="display: block; z-index: 99999; min-height: 35px; width: 300px; position: fixed; background: rgb(43, 54, 67); border: 1px solid rgb(160, 178, 192); text-align: center; color: rgb(119, 119, 119); border-radius: 0px; top: 10px; right: 10px;">
     <div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
     <span id="simplecookienotification_v01_powiadomienie">Ta strona używa plików cookies.</span><span id="br_pc_title_html"><br></span>
@@ -41,7 +42,7 @@
         <ul class="navbar-nav mr-auto submenu">
           <li class="nav-item active dropdown">
               <a class="nav-link dropdown-toggle border-left ml-2 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Wykłady <span class="sr-only">(current)</span>
+                Wykłady
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'wyklad1' %}">Wykład 1</a>
@@ -81,7 +82,12 @@
         </ul>
       </div>
     </nav>
-
+    <script>
+        $(".nav-item .nav-link").on("click", function(){
+          $(".nav-item").find(".active").removeClass("active");
+          $(this).addClass("active");
+       });
+    </script>
     <br>
 
     <div class="container">
