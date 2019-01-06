@@ -34,7 +34,7 @@ def quiz_start(request, lecture):
 
 def quiz_base(request, lecture, question):
     lec = str(lecture)
-    base_quiz = request.session['quizzes'][lec]
+    base_quiz = request.session['quizzes']
     if not base_quiz:
         return redirect('quiz_start', lecture=lecture)
     quiz = QuestionQuiz.objects.get(id=question)
