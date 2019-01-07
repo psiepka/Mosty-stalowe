@@ -1,6 +1,6 @@
 This is a configurable quiz app for Django.
 <br>
-<b><a href='mostystalowe.pl'>Here you can check how its works.</a></b>
+<b><a href='http://mostystalowe.pl/'>Here you can check how its works.</a></b>
 
 I put on website some basic informations about steel brigdes. This page is mostly for civil engineers for educational purposes only.
 
