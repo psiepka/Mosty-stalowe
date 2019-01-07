@@ -35,4 +35,4 @@ Quiz view :
 Quiz result view :
 <br>
 
-<img src="/static/img/preview2.JPG" alt="">
+<img src="/static/img/preview2.png" alt="">
