@@ -27,7 +27,7 @@ Quiz view :
 <br>
 <br>
 
-<img src="../static/img/preview1.JPG" alt="">
+<img src="/static/img/preview1.JPG" alt="">
 <br>
 <br>
 
@@ -35,4 +35,4 @@ Quiz view :
 Quiz result view :
 <br>
 
-<img src="../static/img/preview2.JPG" alt="">
+<img src="/static/img/preview2.JPG" alt="">
