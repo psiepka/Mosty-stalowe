@@ -105,14 +105,24 @@ def quiz_mega_start(request):
     """
     quiz = choice(get_list_or_404(QuestionQuiz))
     try:
-        request.session['mega']
-        last_question = QuestionQuiz.objects.filter(id=int(request.session['mega']['id'])).first()
+        request.session['mega_current']
+        last_question = QuestionQuiz.objects.filter(id=int(request.session['mega_current']['id'])).first()
         while quiz == last_question:
             quiz = choice(get_list_or_404(QuestionQuiz))
+        request.session['mega_preview'] = request.session['mega_current']
     except KeyError:
         pass
-    question = quiz.id
-    return redirect('quiz_mega', question=question)
+    list_ans = get_list_or_404(quiz.answers)
+    shuffle(list_ans)
+    if len(list_ans) > 4:
+        list_ans = list_ans[:4]
+    request.session['mega_current'] = {
+        'id': quiz.id,
+        'question': quiz.question_text,
+        'exp' : quiz.explanation,
+        'ans' : {a.text: a.correct for a in list_ans},
+    }
+    return redirect('quiz_mega', question=quiz.id)
 
 
 def quiz_mega(request, question):
@@ -125,23 +135,21 @@ def quiz_mega(request, question):
     Returns:
         Page with all quiz of lecture, which we store in database.
     """
+    if not request.session['mega_current']:
+        return redirect('quiz_mega_start')
     quiz = get_object_or_404(QuestionQuiz, id=question)
-    ans = quiz.throw_answers()
     content = {
         'question':quiz,
-        'ans':ans,
+        'ans':[a for a,b in request.session['mega_current']['ans'].items()],
     }
     if request.method == "POST":
         if 'submit' in request.POST:
-            request.session['mega'] = {
-                'id': quiz.id,
-                'text' : quiz.question_text,
-                'exp' : quiz.explanation,
-                'score' : quiz.check_answer(ans, request.POST.getlist('mega')),
-                'send' : request.POST.getlist('mega'),
-                'ans' : ans,
-                'answers' : [a for a in ans if AnswerQuiz.objects.filter(question=quiz, text=a).first().correct],
-            }
+            request.session['mega_current'].update(
+                {
+                    'score' : quiz.check_mega_answer(request.session['mega_current']['ans'], request.POST.getlist('mega')),
+                    'send' : request.POST.getlist('mega'),
+                }
+            )
             return redirect('quiz_mega_start')
     return render(request, 'quizzes/quiz_mega.html', context=content)
 

@@ -35,15 +35,15 @@
                 <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name='submit' value="Sprawdź">
             </form>
         </div>
+
     <hr style="margin-top: 25px">
-    {% if request.session.mega %}
+    {% if request.session.mega_preview %}
         <p class="quiz-podpowiedz" style="text-align:left"><em>Poprzednie zadanie</em>:</p>
         <h6 style="text-align:left">
-            {{ request.session.mega.text}}
+            {{ request.session.mega_preview.question}}
         </h6>
-        <br><br>
-
-        {% if request.session.mega.score %}
+        <br>
+        {% if request.session.mega_preview.score %}
             <p class="ans-correct">Brawo odpowiedziałeś poprawnie.</p>
         {% else %}
             <p class="ans-incorrect">Niestety odpowiedziałeś fatalnie.</p>
@@ -52,18 +52,18 @@
 
         <table class="table table-bordered">
             <tbody>
-            {% for a in  request.session.mega.ans %}
+            {% for a, c in request.session.mega_preview.ans.items %}
                 <tr>
                     <td class='p-0'>
-                        {% if a in request.session.mega.send and a in request.session.mega.answers %}
+                        {% if a in request.session.mega_preview.send and c %}
                             <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
                             <b>{{ a }}</b>
                             </p>
-                        {% elif a not in request.session.mega.send and a in request.session.mega.answers %}
+                        {% elif a not in request.session.mega_preview.send and c %}
                             <p class="form-check-label m-1 p-2" style="background-color: #dff0d8">
                             {{ a }}
                             </p>
-                        {% elif a in request.session.mega.send and a not in request.session.mega.answers %}
+                        {% elif a in request.session.mega_preview.send and not c %}
                             <p class="form-check-label m-1 p-2" style="background-color: rgb(255, 195, 195)">
                             <b>{{ a }}</b>
                             </p>
@@ -80,7 +80,7 @@
 
         <p><b>Wytłumaczenie :</b></p>
         <div class='exp'>
-            <p>{{  request.session.mega.exp }}</p>
+            <p>{{ request.session.mega_preview.exp }}</p>
         </div>
 
 

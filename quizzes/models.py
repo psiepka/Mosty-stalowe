@@ -84,11 +84,11 @@ class QuestionQuiz(models.Model):
         """
         correct = 0
         ans = 0
-        for q in quiz_answers:
-            if q.correct:
+        for q, c in quiz_answers.items():
+            if c:
                 ans += 1
         for q in user_answers:
-            if q.correct:
+            if self.answers.get(text=q).correct:
                 correct += 1
             else:
                 correct -= 1
